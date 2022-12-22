@@ -1,0 +1,54 @@
+#sub_visual_area{width: 100%; margin: 0 auto; padding-top: 15px; background: #f6f6f6;}
+.svisual_bg{width: 100%; margin: 0 auto; height: 200px; overflow: hidden; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}
+.svisual_bg1{background: url('/img/ots/new/sub/sv_img1.jpg') no-repeat center center; background-size: cover;}
+.svisual_bg2{background: url('/img/ots/new/sub/sv_img2.jpg') no-repeat center center; background-size: cover;}
+.svisual_bg3{background: url('/img/ots/new/sub/sv_img3.jpg') no-repeat center center; background-size: cover;}
+.svisual_bg4{background: url('/img/ots/new/sub/sv_img4.jpg') no-repeat center center; background-size: cover;}
+.svisual_bg5{background: url('/img/ots/new/sub/sv_img5.jpg') no-repeat center center; background-size: cover;}
+.svisual_bg6{background: url('/img/ots/new/sub/sv_img6.jpg') no-repeat center center; background-size: cover;}
+.svisual_bg > .sv_txt{width: 1024px; margin: 0 auto;}
+.svisual_bg > .sv_txt h2{padding-top: 50px; padding-left: 290px; font-size: 36px; color: #fff; font-weight: bold; text-shadow: 2px 3px 6px rgba(0,0,0,0.3); }
+.svisual_bg > .sv_txt h2 span{margin-top: 10px; display: block; font-size: 17px; line-height: 27px;}
+.nsnibi_bg{width: 100%; height: 54px; background: #3f6ea8;}
+
+.scont_box{width: 1024px; margin: 0 auto; position: relative; background: url('/img/ots/new/sub/nsc_line.jpg') repeat-y center top;}
+.slfmenu_area{float: left; width: 230px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; margin-top: -255px; padding-bottom: 100px;}
+.slfmenu_area > .slfm_top{width: 100%; height: 200px; text-align: center; background: #fff; overflow: hidden;}
+.slfmenu_area > .slfm_top > p{margin-top: 40px; font-size: 25px; color: #1b75bc; font-weight: bold; padding-top: 85px;}
+
+.slfmenu_area > .slfm_top > p.nic1{background: url('/img/ots/new/sub/nic1.png') no-repeat center top;}
+.slfmenu_area > .slfm_top > p.nic2{background: url('/img/ots/new/sub/nic2.png') no-repeat center top;}
+.slfmenu_area > .slfm_top > p.nic3{background: url('/img/ots/new/sub/nic3.png') no-repeat center top;}
+.slfmenu_area > .slfm_top > p.nic4{background: url('/img/ots/new/sub/nic4.png') no-repeat center top;}
+.slfmenu_area > .slfm_top > p.nic5{background: url('/img/ots/new/sub/nic5.png') no-repeat center top;}
+.slfmenu_area > .slfm_top > p.nic6{background: url('/img/ots/new/sub/nic6.png') no-repeat center top;}
+
+.news_leftmenu{border-top: 1px solid #ddd; }
+.news_leftmenu > li > a{display: block; padding: 0 20px; height: 54px; line-height: 54px; border-bottom: 1px solid #ddd; background: #f6f6f6; font-size: 14px; color: #424242; font-weight: 600;}
+.news_leftmenu > li > a img{font-size: 0; line-height: 54px; margin-left: 5px; vertical-align: middle;}
+.news_leftmenu > li > a.on{background: #0f58a8; color: #fff;}
+.news_leftmenu > li > a.on > span{display: block; background: url('/img/ots/new/sub/nlf_ic.png') no-repeat right center;}
+.news_leftmenu > li > a.ov{background: #0f58a8; color: #fff;}
+.news_leftmenu > li > a.ov > span{display: block; background: url('/img/ots/new/sub/nlf_ic.png') no-repeat right center;}
+.news_leftmenu > li > ul.nsdp{display: none; padding: 20px 5px 20px 25px; background: #f1faff; border-bottom: 1px solid #ddd;}
+.news_leftmenu > li > ul.nsdp > li > a{display: block; padding: 5px 0 5px 12px; position: relative; font-size: 14px;  font-weight: 600;}
+.news_leftmenu > li > ul.nsdp > li > a:after{content: ""; position: absolute; left: 0; top: 50%; margin-top: -1px; width: 6px; height: 2px; background: #666;}
+.news_leftmenu > li > ul.nsdp > li > a:hover{color: #0f58a8; text-decoration: underline;}
+.news_leftmenu > li > ul.nsdp > li > a:hover:after{background: #0f58a8;}
+
+.nscontents_all{float: right; width: 768px; margin-top: -54px;}
+.nsbar_navi{height: 54px; overflow:hidden;}
+.nsbar_navi > li{float: left; line-height: 54px; font-size: 14px; color: #b0bfd6; margin-right: 10px; padding-right: 17px; background: url('/img/ots/new/sub/sh_line.png') no-repeat right center;}
+.nsbar_navi > li img{font-size: 0; vertical-align: middle;}
+.nsbar_navi > li:last-child{color: #fff; font-weight: bold; text-decoration: none; margin-right: 0; padding-right: 0; background: none;}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+	#sub_visual_area{display: none;}
+	.scont_box{width: calc(100% - 20px); background: none;}
+	.slfmenu_area{display: none;}
+	.nscontents_all{float: none; width: 100%; margin-top: -54px;}
+}

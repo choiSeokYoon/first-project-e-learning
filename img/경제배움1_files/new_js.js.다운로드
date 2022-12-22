@@ -1,0 +1,239 @@
+$(document).ready(function(){
+	
+
+	$(".allgs").click(function(){
+		$(".search_box").slideDown("fast");
+	});
+	$(".sea_out").click(function(){
+		$(".search_box").slideUp("fast");
+	});
+	
+
+	var banTotal =  $('.mvsl_sld > li').size();
+	try{
+		$(".mvsl_sld").bxSlider({
+			mode: "fade",
+			auto: true,
+			pause: 3000,
+			autoControls: true,
+			onSliderLoad : function($slideElement, oldIndex, newIndex) {
+				$('.mv_numall').text('0' + banTotal);
+			},
+			onSlideAfter : function($slideElement, oldIndex, newIndex) {
+				$('.mv_num').text('0'+(newIndex+1));
+			}
+		});
+	}catch(e){}
+	$(".nmcimg_list > li > a").click(function(e){
+		$(".nmcimg_list > li > a").removeClass("on");
+		$(".nmc_dp").css({"display":"none"});
+		$(this).next(".nmc_dp").css({"display":"block"});
+		$(this).addClass("on");
+	});
+
+	var banTotala =  $('.ac_slid > li').size();
+	try{
+	$('.ac_slid').bxSlider({
+        autoReload: true,
+        pager: true,
+        controls: true,
+        auto:true,
+        speed:500,
+        pause:3000,
+		autoControls: true,
+		onSliderLoad : function($slideElement, oldIndex, newIndex) {
+			$('.tbbn_tt').text('0' + banTotala);
+		},
+		onSlideAfter : function($slideElement, oldIndex, newIndex) {
+			$('.tbbn_nu').text('0'+(newIndex+1));
+		}
+    });
+	}catch(e){}
+	
+	var banTotalb =  $('.bot_slide > li').size();
+	try{
+	$('.bot_slide').bxSlider({
+        slideMargin: 15,
+        autoReload: true,
+        useCSS: true,
+       // easing:'easeInOutCubic',
+        pager: false,
+        controls: true,
+        auto:true,
+        speed:500,
+        pause:3000,
+        maxSlides:8,
+		minSlides:2,
+		slideWidth: 180,
+        moveSlides: 1,
+		autoControls: true,
+		onSliderLoad : function($slideElement, oldIndex, newIndex) {
+			$('.mv_numalls').text('0' + banTotalb);
+		},
+		onSlideAfter : function($slideElement, oldIndex, newIndex) {
+			$('.mv_nums').text('0'+(newIndex+1));
+		}
+    });
+	}catch(e){}
+
+	$(".map_over").click(function(){
+		var num = $(this).index();
+		$(".jmap_line > li").eq(num).show().siblings().hide();
+		$(".nmap_nybox > div.nmap_nys").eq(num).show().siblings().hide();
+		return false;
+	
+	});
+
+
+	$(".news_leftmenu > li > a").click(function(e){
+		if(window.innerWidth >= 1024 && $(this).siblings().length > 0){
+			e.preventDefault();
+		}
+		if($(window).width() >= 1024){
+			if ( $(this).hasClass('ov') )
+			{
+				$(".news_leftmenu > li > a").removeClass("ov");
+				$(".nsdp").slideUp("fast");
+			}else{
+				$(".news_leftmenu > li > a").removeClass("ov");
+				$(".nsdp").slideUp("fast");
+				$(this).next(".nsdp").slideDown("fast");
+				$(this).addClass("ov");
+			}
+		}
+	});
+
+	
+	/*new menu 2021.10.19*/
+	$(".dp1 > li > a").bind("mouseover click", function(e){
+		if ($(window).width() > "1024" && e.type == "mouseover"){
+			$(this).next(".dp2").show();
+			$(".menu_bg2").show();
+		}else if ($(window).width() <= "1024" && e.type == "click"){
+			e.preventDefault()
+			if ($(this).hasClass('on')){
+				$(".dp1 > li > a").removeClass("on");
+				$(".dp2").slideUp("fast");
+			}else{
+				$(".dp1 > li > a").removeClass("on");
+				$(".dp2").slideUp("fast");
+				$(this).next(".dp2").slideDown("fast");
+				$(this).addClass("on");
+			}
+		}
+	});
+
+	$(".dp1 > li").mouseleave(function(){
+		if ($(window).width() > "1024"){
+			$(this).children(".dp2").hide();
+			$(".menu_bg2").hide();
+		}
+	});
+
+	$(".mormenu_open2").click(function(){
+		if($(window).width() <= 1024){
+			$("body").css({"overflow-y":"hidden"});
+			$("#menu-con2").animate({
+				left:'0'
+			});
+			$(".menu_bg2").fadeIn();
+		}
+	});
+
+	$(".morm_out2").click(function(){
+		if($(window).width() <= 1024){
+			$("body").css({"overflow-y":"auto"});
+			$("#menu-con2").animate({
+				left:'-280'
+			});
+			$(".menu_bg2").fadeOut();
+		}
+	});
+
+	$("#menu-con2 > ul > li > a").focus(function(){
+		if($(window).width() > 1024){
+			$(this).next(".dp2").show();
+			$(".menu_bg2").stop().show();
+			
+		}
+	});
+	$(".dp1 > li > .dp2 > ul > li:last-child > .dp3 > ul > li:last-child > a").blur(function(){
+		if($(window).width() > 1024){
+			$(this).parent("li").parent("ul").parent(".dp3").parent("li").parent("ul").parent(".dp2").hide();
+			$(".menu_bg2").stop().hide();
+		}
+	});
+	
+	$('.left-deapth2 > li > a.ov').parent().parent('ul').show(); //  하위메뉴 보여주기
+	$('.left-deapth2 > li > a.ov2').parent().parent('ul').show(); // 하위메뉴 보여주기
+	
+});
+
+
+
+
+$(window).on("load resize", function(){
+	/*$("body").removeAttr("style");
+	$("#tpop_area").removeAttr("style");
+	$(".menu_bg").removeAttr("style");
+	$("#menu-con").removeAttr("style");
+	$(".deapth1").removeAttr("style");
+	$(".deapth2").removeAttr("style");
+	$(".deapth1 > li > a").removeClass("on");
+	$(".pop_out").removeClass("on");
+	$(".pop_out > span").removeAttr("style");
+	$(".pc_allmenu").removeAttr("style");
+	*/
+	/*
+	if ($(window).width() <= 1024 ){
+		$("#menu-con").each(function(){
+			var alh = $(window).height();
+			sh = alh - 145;
+			$(this).css({height:sh});
+		});
+	}	
+	*/
+	
+	/*new menu 2021.10.19*/
+	if($(window).width() > "1024"){
+		$(".hb-con #menu-con2").removeAttr("style");
+		$("#menu-con2 > ul > li > .dp2").removeAttr("style");
+		$(".menu_bg2").removeAttr("style");
+		$("#menu-con2 > ul > li > a").removeClass("on");
+		
+	}
+	
+});
+
+
+function fnGetMainList(comUpprCd){
+	var datas = "<li class=\"ths\"><div class=\"names\"><p>지역</p></div><div class=\"lists\"><p>교육명</p></div><div class=\"days\"><p>교육기간</p></div></li>";
+	$("#"+comUpprCd).html( datas );
+    $.ajax({ 
+        url: '/mec/ots/mainListE.do', 
+        type: "post", 
+        dataType:"JSON", //전송받을 형식 지정 
+        async: true,     //동기 비동기 설정
+        data : {catCd:comUpprCd},
+        success: function(data){        
+        	$("#"+comUpprCd).empty();
+        	
+           $.each(data, function(i) {
+        	   
+        	   if(i < 8){
+        		   datas += "<li class=\"tds\">";
+        		   datas += "<div class=\"names\"><p>"+data[i].catNm+"</p></div>";
+				   datas += "<div class=\"lists\"><a href='/mec/ots/brd/view.do?mnuBaseId=MNU0000150&tplSer=62&atcSer="+data[i].atcSer+"' title="+data[i].atcTitle+">"+data[i].atcTitle+"</a></div>";							
+				   datas += "<div class=\"days\"><p>"+ data[i].atcStDt+"~"+data[i].atcEndDt +"</p></div></li>";
+				  
+        	   }
+           });
+           //$("#"+comUpprCd).remove();
+           $("#"+comUpprCd).append( datas );
+        },error: function (request, status, error) { 
+            alert("입력중 에러 발생 브라우저를 재시작 후에 시도해 주세요"); 
+        } 
+    });
+    
+    
+}

@@ -1,0 +1,57 @@
+table { border-collapse: collapse; width: 100%;}
+
+/* sub2_3_1_2 자동차구매플랜 안내 > 구매*/
+table.sub2-312-flow-tabl1 thead th{border:1px solid #e1e1e1;border-top:2px solid #545454;padding:12px 0;background:#f5f5f5;color:#333333;}
+table.sub2-312-flow-tabl1 thead th.bor-lf-no{border-left:0;}
+table.sub2-312-flow-tabl1 tbody td.bor-lf-no{border-left:0;}
+table.sub2-312-flow-tabl1 tbody td{padding:12px 10px;border:1px solid #e1e1e1;border-top:0;}
+table.sub2-312-flow-tabl1 li{padding:5px 0 5px 13px;background:url(/img/ots/EE-11000/economic2_01.gif) no-repeat left 12px;letter-spacing:-1px;}
+
+
+
+/* sub2_4_2 나에게 맞는 경제교육 어린이*/
+table.sub2-04-tabl1  thead  th{color:#333333;padding:13px 0;border:1px solid #e1e1e1;border-right:0;border-top:2px solid #545454;background:#f5f5f5;}
+table.sub2-04-tabl1  thead  th.ht-ri-bder{border-right:1px solid #e1e1e1;}
+table.sub2-04-tabl1  tbody  th{color:#666666;padding:3px;font-weight:400;border:1px solid #e1e1e1;border-right:0;border-top:0;}
+table.sub2-04-tabl1  tbody  td{padding:15px 10px 15px 0;color:#666666;border:1px solid #e1e1e1;border-top:0;}
+table.sub2-04-tabl1  tbody  td ul{float:left;}
+table .sub-ul-dot1{padding:0 0 0 25px;text-align:left;}
+table .sub-ul-dot1 li{padding:5px 0 5px 13px;background:url(/img/ots/EE-11000/economic2_01.gif) no-repeat left 12px;letter-spacing:-1px;}
+
+table.sub2-04-tabl2  thead  th{color:#333333;padding:4px 12px;border:1px solid #e1e1e1;border-right:0;border-top:2px solid #545454;background:#f5f5f5;}
+table.sub2-04-tabl2  thead  th.ht-ri-bder{border-right:1px solid #e1e1e1;}
+table.sub2-04-tabl2  tbody  th{color:#666666;padding:15px 3px;font-weight:400;border:1px solid #e1e1e1;border-top:0;border-right:0;letter-spacing:-1px;}
+table.sub2-04-tabl2  tbody  th span{word-break:break-all;word-wrap: break-word;display:block;padding:5px 0 10px 0;color:#2f74ab;}
+table.sub2-04-tabl2  tbody  td{padding:15px 10px 15px 0;color:#666666;border:1px solid #e1e1e1;border-top:0;border-right:0;text-align:center;}
+table.sub2-04-tabl2  tbody  td.ht-ri-bder{border-right:1px solid #e1e1e1;}
+table.sub2-04-tabl2 .sub-ul-dot1{padding:0 0 0 20px;}
+
+
+/* sub2_4_7 나에게 맞는 경제교육 다문화가정*/
+table.sub2-m2n5-ctabl{padding:6px 10px 10px 10px;text-align:center;border-collapse: separate;border-spacing: 6px;}
+table.sub2-m2n5-ctabl td{height:58px;border-radius:3px;color:#fff;font-size:16px;line-height:18px;font-weight:400;}
+table.sub2-m2n5-ctabl td span{font-size:12px;line-height:13px;}
+table.sub2-m2n5-ctabl td.language-1{background:#6491db;}
+table.sub2-m2n5-ctabl td.language-2{background:#48add6;}
+table.sub2-m2n5-ctabl td.language-3{background:#f45a5a;}
+table.sub2-m2n5-ctabl td.language-4{background:#766c5d;}
+table.sub2-m2n5-ctabl td.language-5{background:#f66363;}
+table.sub2-m2n5-ctabl td.language-6{background:#91b632;}
+table.sub2-m2n5-ctabl td.language-7{background:#52af6a;}
+table.sub2-m2n5-ctabl td.language-8{background:#37b7a8;}
+table.sub2-m2n5-ctabl td.language-9{background:#eeaf19;}
+table.sub2-m2n5-ctabl td.language-10{background:#ea75a4;}
+table.sub2-m2n5-ctabl td.language-11{background:#4685ae;}
+table.sub2-m2n5-ctabl td.language-12{background:#f3932c;}
+table.sub2-m2n5-ctabl td.language-13{background:#8781c5;}
+
+
+
+/* sub5_1 경제교육 포털소개*/
+table.sub5-01-tabl1  tbody{border-top:2px solid #545454;}
+table.sub5-01-tabl1  tbody  th{color:#666666;padding:3px;font-weight:400;border:1px solid #e1e1e1;border-right:0;border-top:0;}
+table.sub5-01-tabl1  tbody  td{position:relative;padding:15px 10px 15px 0;color:#666666;border:1px solid #e1e1e1;border-top:0;line-height:20px;letter-spacing:-0.5px;}
+table.sub5-01-tabl1  tbody  td > p{position:absolute;right:15px;bottom:15px;}
+table.sub5-01-tabl1 .sub-ul-dot1{padding:0 0 0 30px;text-align:left; margin-right:122px;}
+table.sub5-01-tabl1 .sub-ul-dot1 li{padding:5px 0 5px 13px;background:url(/img/ots/EE-11000/economic2_01.gif) no-repeat left 12px;}
+

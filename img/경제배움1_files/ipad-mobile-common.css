@@ -1,0 +1,53 @@
+.header-top{width:98%;padding:30px 0 26px;}
+.header-top-right > div{display:none;}
+.header-top-right ul{display:none;}
+.header-top-left{float:none;text-align:center;height:35px;}
+.header-top-left a:first-child{display:none;}
+.header-top-right{float:none;}
+.header-top-right > div{width:calc(100% - 53px);float:none;padding-right:39px;position:relative;margin-top:10px;margin-left: 0;left: auto;top: auto;}
+.header-top-right > div select{display:none;}
+.header-top-right > div input[type="text"]{width:100%;}
+.header-top-right > div > a{position:absolute;top:10px;right:10px;}
+#pc-menu{display:none;}
+#contents{width:98%;}
+.slide-width{width:98%;}
+.main-con-area-floor1 li{margin:5px 1%;}
+.mcaf2-left{width:50%;}
+.mcaf2-left a{padding: 42px 0 28px 34px;}
+.mcaf2-center{width:calc(50% - 2px);height:287px;float:right;border:1px solid #d9d9d9;border-bottom:0;}
+.mcaf2-center img{width:100%;}
+.mcaf2-right{float:none;width:calc(96% - 2px);padding:2%;height:96%;}
+.mcaf2-right > ul{text-align:center;}
+.mcaf2-right h2{margin-bottom:10px;}
+.mcaf2-right li{float:none;display:inline-block;padding-top:0;padding-left:2%;width:23%;text-align:left;border:0 !important;}
+#footer{width:98%;}
+.footer-logo{float:none;text-align:center;}
+.footer-txt{margin-left:0;float:none;margin-top:15px;text-align:center;}
+.footer-txt ul{display:none;}
+.slide-width > a{padding-left:0;padding-top:100px;}
+.slide-width > a img{width:75%;}
+
+#contents.main-con-area{margin-top:-30px;padding:20px 0 10px 0;}
+.main-pop1-con{width:100%;margin:0 auto;}
+.main-pop1-c1{position:absolute;top:100px;z-index:9999;margin:0;}
+.main-popc1-p2{float:left;margin:0;}
+
+.m-menu-btn{display:block;}
+#m-menu{display:none;}
+#m-search{display:block;}
+
+#footer-bg{margin-top:0;}
+.mobile_TOP{display:block;position: absolute;top: 8px;}
+
+#slider001.flexslider{width:98%;padding:0 1%;}
+
+
+@media screen and (max-width:600px) {
+	.mcaf2-right li{width:48%;}
+
+	.mcaf2-left{float:none;width:100%;height:auto;}
+	.mcaf2-left a {padding: 42px 0 20px 34px;}
+	.mcaf2-center{float:none;width:calc(100% - 2px);height:auto;text-align:left;}
+	.mcaf2-center-88d {padding: 30px 0 20px 34px;}
+	.main-con-area-floor2 {margin-top: 25px;}
+}

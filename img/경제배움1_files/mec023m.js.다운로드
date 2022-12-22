@@ -1,0 +1,1296 @@
+
+$(document).ready(function(){
+    // 게시판구분코드
+    //fnCodeSelectBox('BOARDTYPCD ','bltTpyCd','hiddenBltTpyCd');
+    // 카테고리코드
+    //fnCodeSelectBox('BRDCATCD','upCatCd','hiddenUpCatCd');
+
+	try{
+	    var dates = $("#atcStDt, #atcEndDt").datepicker({
+	        dateFormat: 'yy-mm-dd',
+	        defaultDate: "+0w",
+	        changeMonth: true,
+	        numberOfMonths: 1
+	    }).attr("readonly", true);
+	}catch(e){
+		
+	}
+    if($("textarea.edit.kor").length > 0){
+        
+        var edit_html = $("textarea.edit.kor").val();
+        textedit("inn");
+        setTimeout(function(){
+            tinymce.activeEditor.setContent(edit_html);
+        },1000);
+    }
+	
+    $("#comObject_checkall").click(function(){
+    	if($("#comObject_checkall").prop("checked")){
+    		$("input[name=comObject]").prop("checked", true);
+    	}else{
+    		$("input[name=comObject]").prop("checked", false);
+    	}
+    });
+	
+	$("#comApparatus_checkall").click(function(){
+    	if($("#comApparatus_checkall").prop("checked")){
+    		$("input[name=comApparatus]").prop("checked", true);
+    	}else{
+    		$("input[name=comApparatus]").prop("checked", false);
+    	}
+    });
+	
+	$("#comResult_checkall").click(function(){
+    	if($("#comResult_checkall").prop("checked")){
+    		$("input[name=comResult]").prop("checked", true);
+    	}else{
+    		$("input[name=comResult]").prop("checked", false);
+    	}
+    });
+    
+    // 파일클릭
+    $(".fileCnt").click(function(){
+        
+        var url = '/mec/filedowncnt/fileCnt.do';
+        var atcSer = $("input[name=atcSer]").val();
+        
+        $.ajax({ 
+            url: url, 
+            type: "post", 
+            dataType:"json", //전송받을 형식 지정 
+            async: false,     //동기 비동기 설정
+            data : {atcSer:atcSer},
+            success: function(data){       //성공시 data라는 변수에 리턴값이 매칭됨 오브젝트형으로 리턴시 개별 파싱해야됨 
+                return true;
+            },error: function (request, status, error) { 
+                alert("입력중 에러 발생 브라우저를 재시작 후에 시도해 주세요"); 
+            } 
+        });
+        return false;
+
+    });
+    
+    $(".edit_save").click(function(){
+		
+    	if(doubleSubmitCheck()) return;
+    		
+	    		var frm = document.mec023mFrm;
+	            if(!validateMec023mFrm(frm)){
+	                return;
+	            }else{
+	                if (confirm(fnGetMessage('common.regist.msg'))) {
+	                	
+	                    $("#mec023mFrm").submit();//서브밋 진행
+	                    return false;
+	                }
+	            }
+	    	
+	    	
+    });
+    
+    
+
+    
+    
+    // 목록버튼 클릭
+    $(".edit_list").click(function(){
+        $("#mec023mFrm").attr('action','/mec/ots/brd/list.do');
+        $("#mec023mFrm").submit();//서브밋 진행
+    });
+
+    // 저장버튼 클릭
+    $(".edit_update").click(function(){
+    	if(fnBrdValidate()){
+            var frm = document.mec023mFrm;
+            if(!validateMec023mFrm(frm)){
+                return;
+            }else{
+                if (confirm(fnGetMessage('common.update.msg'))) {
+                    $("#mec023mFrm").submit();//서브밋 진행
+                    return false;
+                }
+            }
+    	}
+    });
+    
+    // 게시판 권한 레이어 팝업
+    $(".edit_auth").click(function(){
+    	fnCodeLayerOpen('layerBrdTplAuth');
+    });
+    
+    // 삭제버튼 클릭
+    $(".edit_delt").click(function(){
+        if(confirm(fnGetMessage('common.delete.msg'))){
+            $("#mec023mFrm").attr('action','/mec/ots/brd/deleteBrd.do');
+            $("#mec023mFrm").submit();//서브밋 진행
+        }
+    });
+    
+    $("#thumImg").change(function(e) {
+        $("#thumDelChk").attr("checked",true);
+    });
+    
+    // 답글작성
+    $(".edit_reply").click(function(){
+
+    	$('#upAtcSer').val($('#atcSer').val());
+        $("#mec023mFrm").attr('action','/mec/ots/brd/regs.do');
+        $("#mec023mFrm").submit();//서브밋 진행
+    });
+    
+    if($('#brdData').length > 0){
+        var $allListElements = $('#brdData');
+        // $('li.item-ii').find( $allListElements );
+        
+        var cnt = 0;
+        $allListElements.find(" *").each(function(index){
+            // console.log(index+'_'+$(this).attr('class') );
+            var clsNm = '';
+            var htmlStr = '';
+            if($(this).attr('class') != undefined){
+                clsNm = $(this).attr('class');
+                cnt++;
+                //console.log('indexOf   '+ clsNm+ '   ' + $('.'+clsNm).html()+ '   ' + $('.'+clsNm).length);
+                if($('.'+clsNm).length > 1){
+                	$('#'+clsNm).html('');
+                	
+                	$('.'+clsNm).each(function(index){
+                		$('#'+clsNm).append($(this).html());
+                	});
+
+                }else if($('.'+clsNm).length == 1){
+                	$('#'+clsNm).html('');
+                	$('#'+clsNm).append($('.'+clsNm).html());
+                	
+                }else{
+                	$('#'+clsNm).html('');
+                }
+
+            }
+        });
+    }
+    
+    //
+//    var cdTotal =  $('.cd_slid > li').size();
+//	try{
+//		$(".cd_slid").bxSlider({
+//			mode: "horizontal",
+//			auto: false,
+//			pause: 3000,
+//			pager:false,
+//			autoControls: true,
+//			controls:true,
+//			onSliderLoad : function($slideElement, oldIndex, newIndex) {
+//				//$('.mv_numall').text('0' + banTotal);
+//			},
+//			onSlideAfter : function($slideElement, oldIndex, newIndex) {
+//				//$('.mv_num').text('0'+(newIndex+1));
+//			}
+//		});
+//	}catch(e){}
+	
+	$(".checks > li > input").click(function(){
+		var tagId = $(this).attr('id');
+		console.log( tagId.indexOf("_", 4 ) );
+		var mvId = tagId.substr( 4, tagId.indexOf("_", 4 ) - 4);
+		console.log(tagId +":"+ mvId);
+		console.log( tagId.indexOf("_", 4 ) );
+		addMvList(mvId);
+	});
+	
+	$("#atcField3_checkall").click(function(){
+		
+    	if($("#atcField3_checkall").prop("checked")){
+    		$("input[id*=chk_atcField3]").prop("checked", true);
+    	}else{
+    		$("input[id*=chk_atcField3]").prop("checked", false);
+    	}
+    	addMvList('atcField3');
+    });
+	
+	$("#atcField8_checkall").click(function(){
+    	if($("#atcField8_checkall").prop("checked")){
+    		$("input[id*=chk_atcField8]").prop("checked", true);
+    	}else{
+    		$("input[id*=chk_atcField8]").prop("checked", false);
+    	}
+    	addMvList('atcField8');
+    });
+
+	$("#atcField10_checkall").click(function(){
+		if($("#atcField10_checkall").prop("checked")){
+			$("input[id*=chk_atcField10]").prop("checked", true);
+		}else{
+			$("input[id*=chk_atcField10]").prop("checked", false);
+		}
+		addMvList('atcField10');
+	});
+
+    
+    $("#atcField11_checkall").click(function(){
+    	if($("#atcField11_checkall").prop("checked")){
+    		$("input[id*=chk_atcField11]").prop("checked", true);
+    	}else{
+    		$("input[id*=chk_atcField11]").prop("checked", false);
+    	}
+    	addMvList('atcField11');
+    });
+    
+    $("#atcField12_checkall").click(function(){
+    	if($("#atcField12_checkall").prop("checked")){
+    		$("input[id*=chk_atcField12]").prop("checked", true);
+    	}else{
+    		$("input[id*=chk_atcField12]").prop("checked", false);
+    	}
+    	addMvList('atcField12');
+    });
+    
+    $("#atcEtc4_checkall").click(function(){
+    	if($("#atcEtc4_checkall").prop("checked")){
+    		$("input[id*=chk_atcEtc4]").prop("checked", true);
+    	}else{
+    		$("input[id*=chk_atcEtc4]").prop("checked", false);
+    	}
+    	addMvList('atcEtc4');
+    });
+    
+    $("#comObject_checkall").click(function(){
+		
+    	if($("#comObject_checkall").prop("checked")){
+    		$("input[id*=chk_comObject]").prop("checked", true);
+    	}else{
+    		$("input[id*=chk_comObject]").prop("checked", false);
+    	}
+    	addMvList('comObject');
+    });
+    
+    $("#comApparatus_checkall").click(function(){
+		
+    	if($("#comApparatus_checkall").prop("checked")){
+    		$("input[id*=chk_comApparatus]").prop("checked", true);
+    	}else{
+    		$("input[id*=chk_comApparatus]").prop("checked", false);
+    	}
+    	addMvList('comApparatus');
+    });
+
+    $("#comResult_checkall").click(function(){
+	
+		if($("#comResult_checkall").prop("checked")){
+			$("input[id*=chk_comResult]").prop("checked", true);
+		}else{
+			$("input[id*=chk_comResult]").prop("checked", false);
+		}
+		addMvList('comResult');
+    });
+    
+    $("#catCd_checkall").click(function(){
+    	
+		if($("#catCd_checkall").prop("checked")){
+			$("input[id*=chk_catCd]").prop("checked", true);
+		}else{
+			$("input[id*=chk_catCd]").prop("checked", false);
+		}
+		addMvList('catCd');
+    });
+    
+});
+
+function addMvList(mvId){
+	var dtlen = $("input[id*=chk_"+mvId+"_]").length;
+	console.log('len:'+ dtlen);
+	objids = Array();
+	for( var i = 0; i < dtlen; i++){
+		if( $("input[id*=chk_"+mvId+"_]").eq(i).prop("checked") ){
+			chkId = $("input[id*=chk_"+mvId+"_]").eq(i).attr('id');
+			objids.push( $("#"+chkId).val() );
+		}
+	}
+	var s = objids.join(':');
+	$('#'+mvId).val(s);
+}
+
+function ismobile(){
+	var filter = "win16|win32|win64|mac";
+	if(navigator.platform && filter.indexOf(navigator.platform.toLowerCase()) >= 0){
+		return true;
+	}else{
+		return false;
+	}
+		
+}
+var doubleSubmitFlag = false;
+function doubleSubmitCheck(){
+	if(doubleSubmitFlag){
+		return doubleSubmitFlag;
+	}else{
+		doubleSubmitFlag = true;
+		return false;
+	}
+}
+
+function getUrlParams(){
+	var params = {};
+	window.location.search.replace(
+			/[?&]+([^=&]+)=([^&]*)/gi,
+			function(str,key,value){params[key]= value;}
+	);
+	return params;
+}
+
+$(document).ready(function(){
+	oParams = getUrlParams();
+	//console.log("tplSer:"+oParams.tplSer);
+	//console.log("atcSer:"+oParams.atcSer);
+	//console.log("tempCd:"+oParams.tempCd);
+	if(oParams.atcSer === undefined){
+		$('#atcSer').val('');
+	}
+	if(oParams.tempCd === undefined){
+		$('#tempCd').val('');
+	}
+});
+function fn_egov_select_noticeList(pageIndex){
+	if(!pageIndex){
+		pageIndex = 1;
+	}
+	$('#pageIndex').val(pageIndex);
+	$("#mec023mFrm").attr('method','get');
+	if( $('#mec023mFrm').attr('action') == '' ){
+		$('#mec023mFrm').attr('action','/mec/ots/brd/list.do');
+	}
+	
+	try{
+		$('#atcSer').val("");
+	}catch(e){
+		
+	}
+	
+	$('#mec023mFrm').submit();
+}
+
+function fn_egov_select_noticeSubList(pageIndex){
+	if(!pageIndex){
+		pageIndex = 1;
+	}
+	$('#pageIndex').val(pageIndex);
+	$("#mec023mFrm").attr('method','get');
+	if( $('#mec023mFrm').attr('action') == '' ){
+		$('#mec023mFrm').attr('action','/mec/ots/brd/sublist.do');
+	}
+	
+	try{
+		$('#atcSer').val("");
+	}catch(e){
+		
+	}
+	
+	$('#mec023mFrm').submit();
+}
+
+
+function fnBrdView(atcSer){
+	$("#atcSer").val(atcSer);
+	$("#mec023mFrm").attr('method','get');
+    $("#mec023mFrm").attr('action','/mec/ots/brd/view.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+
+function fnBrdView2(atcSer, tplSer){
+	$("#atcSer").val(atcSer);
+	$("#tplSer").val(tplSer);
+	$("#mec023mFrm").attr('method','get');
+    $("#mec023mFrm").attr('action','/mec/ots/brd/view.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+
+
+function fnFileCheck(i){
+	$('#fileDelChk'+i).attr("checked",true);
+}
+
+function fnJaumSearch(jaumNum){
+	$('#pageIndex').val('1');
+	$('#searchKeyword').val('');
+	$('#mec023mFrm').attr('action','/mec/ots/brd/list.do');
+	$('#jaumSearchCnd').val(jaumNum);
+	$("#mec023mFrm").submit();
+}
+
+function fnBrdValidate(){
+	
+	/*
+<li><a href="/mec/ots/brd/list.do?tplSer=1">일반형 게시판</a></li>
+<li><a href="/mec/ots/brd/list.do?tplSer=2">뉴스형 게시판</a></li>
+<li><a href="/mec/ots/brd/list.do?tplSer=3">갤러리형 게시판</a></li>
+<li><a href="/mec/ots/brd/list.do?tplSer=4">캘린더형 게시판</a></li>
+<li><a href="/mec/ots/brd/list.do?tplSer=5">faq 게시판</a></li>
+<li><a href="/mec/ots/brd/list.do?tplSer=6">PDF 게시판</a></li>
+<li><a href="/mec/ots/brd/list.do?tplSer=7">용어사전 게시판</a></li>
+<li><a href="/mec/ots/brd/list.do?tplSer=8">유투브 동영상 게시판</a></li>
+<li><a href="/mec/ots/brd/list.do?tplSer=9">동영상 게시판</a></li>
+	 */
+	var atcSer = '';
+	if($('#atcSer').length > 0 ){
+		atcSer = $("#atcSer").val();
+	}
+	var tplSer = $('#tplSer').val();
+	
+	
+	if($('#atcPwd').length > 0 && $('#atcPwd').val() == ''){
+		alert('비밀번호를 입력하여 주십시오.');
+		$('#atcPwd').focus();
+		return false;
+		
+	}
+	
+	if(atcSer == ''){
+		
+		if($('#thumImg').length > 0 ){
+			
+			if($('#thumImg').val() == ''){
+				alert('썸네일 이미지를 입력하여 주십시오.');
+				return false;
+			}
+			
+			var atchFile = $('#thumImg').val();
+			var ext = atchFile.replace(/^.*\./,'');
+			ext = ext.toLowerCase();
+			var imgExt = ['jpg','jpeg','gif','bmp','tif','png','tiff','raw'];
+			
+			var count = 0;
+			for(var i=0; i< imgExt.length; i++){
+				if(ext == imgExt[i]){
+					count++;
+				}
+			}
+			if(count == 0){
+				
+				fnFileReset('thumImg');
+				if($("#thumDelChk").length > 0 ){
+					$("#thumDelChk").attr("checked",false);
+					$('#thumDelChk').focus();
+				}
+				alert('이미지 파일만 업로드 가능합니다.');
+				return false;
+			}
+		}
+		
+		/*
+		if(tplSer == '6'){
+			// pdf 
+			var atchFile = $('#atchFile').val();
+			var ext = atchFile.replace(/^.*\./,'');
+			ext = ext.toLowerCase();
+			var imgExt = ['pdf'];
+			
+			var count = 0;
+			for(var i=0; i< imgExt.length; i++){
+				if(ext == imgExt[i]){
+					count++;
+				}
+			}
+			if(count == 0){
+				
+				fnFileReset('atchFile');
+				$("#fileDelChk1").attr("checked",false);
+				alert('pdf 파일만 업로드 가능합니다.');
+				$('#atchFile').focus();
+				return false;
+			}
+		}
+		*/
+	
+		if(tplSer == '3'){
+			
+		}
+	} else {
+		var atcThumImg = '';
+		if($('#thumImg').length > 0 ){
+			atcThumImg = $("#atcSer").val();
+			if(atcThumImg == '' && $('#atchFile').val() == ''){
+				alert('썸네일 이미지 파일을 선택하여 주십시오.');
+				return false;
+			}
+		}
+		
+	}
+	
+	return true;
+}
+
+function fnFileReset(id){
+	if($.browser.msie){
+		$('#'+id).replaceWith($('#'+id).clone(true));
+	}else{
+		$('#'+id).val('');
+	}
+}
+
+function fnEtcAdd(){
+	var len = $('#etcBody > tr').length;
+	
+	var idNum = len+1;
+	if(len > 0){
+		var htmlStr = "";
+		htmlStr +="<tr id='etcBody"+(idNum)+"'>";
+		htmlStr +="    <td><input type='text' name='etcTitleList' value=''/></td>";
+		htmlStr +="    <td><input type='text' name='etcLinkUrlList' value=''/></td>";
+		htmlStr +="    <td><input type='text' name='etcPageNoList' value=''/></td>";
+		htmlStr +="    <td><a href='#link' onclick='fnEtcDel("+idNum+")'>삭제</a></td>";
+		/*
+		 */
+		htmlStr +="</tr>";
+//		alert(htmlStr);
+		$('#etcBody').append(htmlStr);
+	}
+}
+
+function fnEtcDel(idx){
+	$('#etcBody'+idx).remove();
+}
+
+
+function fnYutView(atcSer){
+	//alert('test');
+	$('#atcSer').val(atcSer);
+	$('#tempCd').val('ALLVIEW');
+	$("#mec023mFrm").attr('method','get');
+    $("#mec023mFrm").attr('action','/mec/ots/brd/list.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+
+function fnYutDetailView(atcSer){
+	//alert('test');
+	$('#atcSer').val(atcSer);
+	$('#tempCd').val('ALLVIEW');
+	$("#mec023mFrm").attr('method','get');
+    $("#mec023mFrm").attr('action','/mec/ots/brd/detail.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+
+function fnYutDetail(atcSer){
+	$('#atcSer').val(atcSer);
+	$('#tempCd').val('ALLVIEW');
+	$("#mec023mFrm").attr('method','get');
+    $("#mec023mFrm").attr('action','/mec/ots/brd/detail.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+/*
+function fnBrdView(atcSer){
+	$('#atcSer').val(atcSer);
+    $("#mec023mFrm").attr('action','/mec/ots/brd/view.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+*/
+function fnUrlLink(atcSer,atcLinkUrl){
+	
+	$('#atcSer').val(atcSer);
+	window.open(atcLinkUrl,'_blank');
+	
+}
+
+function fnFileDown(atcSer,atchSer){
+	
+	$('#atcSer').val(atcSer);
+	window.open('/cmm/FileDownload.do?atchFileId='+atcSer+'&atchSer='+atchSer,'_blank');
+	
+}
+
+function fnBrdSearch(){
+	
+	/*if($('#catCd').val() == ''){
+		if($('#searchKeyword').val() == '' || $('#searchKeyword').val() ==  undefined){
+			alert('검색어를 입력하세요.');
+			return false;
+		}
+	}*/
+	
+	$('#pageIndex').val(1);
+	$("#tempCd").val('searchView');
+	$("#mec023mFrm").attr('method','get');
+    $("#mec023mFrm").attr('action','/mec/ots/brd/list.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+
+function fnBrdSearchTp(){
+	$('#pageIndex').val(1);
+	$("#mec023mFrm").attr('method','get');
+    $("#mec023mFrm").attr('action','/mec/ots/brd/list.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+
+function fnBrdSearch4(){
+	
+	/*if($('#catCd').val() == ''){
+		if($('#searchKeyword').val() == '' || $('#searchKeyword').val() ==  undefined){
+			alert('검색어를 입력하세요.');
+			return false;
+		}
+	}*/
+	$('#pageIndex').val(1);
+	$("#tempCd").val('searchView');
+	$("#mec023mFrm").attr('method','get');
+    $("#mec023mFrm").attr('action','/mec/ots/brd/slist.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+
+function fnBrdSearchBefore(){
+	
+	$('#pageIndex').val(1);
+	$("#tempCd").val('beforeView');
+	$("#mec023mFrm").attr('method','get');
+    $("#mec023mFrm").attr('action','/mec/ots/brd/list.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+
+function fnBrdSearchAfter(){
+	
+	$('#pageIndex').val(1);
+	$("#tempCd").val('afterView');
+	$("#mec023mFrm").attr('method','get');
+    $("#mec023mFrm").attr('action','/mec/ots/brd/list.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+
+function fnBrdYutSearch(){
+	//if($('#searchKeyword').val() == '' || $('#searchKeyword').val() ==  undefined){
+	//	alert('검색어를 입력하세요.');
+	//	return false;
+	//}
+	$('#searchFrm2_pageIndex').val('1');
+	$("#searchFrm2").attr('method','get');
+    $("#searchFrm2").attr('action','/mec/ots/brd/list.do');
+    $("#searchFrm2").submit();//서브밋 진행
+}
+
+function fnBrdSearch1(atcSer){
+    $("#atcSer").val(atcSer);//서브밋 진행
+    $("#mec023mFrm").attr('action','/mec/ots/brd/list.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+
+function fnBrdSearchInit(){
+	
+	$('#searchCondition').val('');
+	$('#searchKeyword').val('');
+	$('#searchCondition2').val('');
+	$('#searchKeyword2').val('');
+	$('#atcField1').val('');
+	$('#tempCd').val('ALLVIEW');
+	
+	if($('input[name=catCdList]').length > 0 ){
+		$('input[name=catCdList]').removeAttr('checked');
+	}
+	
+	if($('input[name=pinId]').length > 0 ){
+		$('input[name=pinId]').removeAttr('checked');
+	}
+	
+	if($('#jaumSearchCnd').length > 0 ){
+		$('#jaumSearchCnd').val('');
+	}	
+	
+}
+
+
+
+
+function fnReplyReg(atcSer){
+	$('#upAtcSer').val(atcSer);
+	$('#upperAtcSer').val(atcSer);
+	
+    $("#mec023mFrm").attr('action','/mec/ots/brd/regs.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+
+function fnList(){
+    $("#mec023mFrm").attr('action','/mec/ots/brd/list.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+	
+}
+
+function fnOffRegs(){
+	
+	if(fnBrdValidate()){
+		
+        var frm = document.mec023mFrm;
+        
+			
+        	if($("input:checkbox[id='consent-check']").is(":checked") != true){
+        		alert('개인정보 수집 및 활용에 동의하여 주십시오.');
+        		$('#consent-check').focus();
+        		return false;
+        	}
+			
+        	if($("input:checkbox[id='consent-check2']").is(":checked") != true){
+        		alert('개인정보의 제3자 제공에 동의하여 주십시오.');
+        		$('#consent-check2').focus();
+        		return false;
+        	}
+        	
+        	var atcTitle = $("#atcTitle").val().length;
+		
+			if( atcTitle < 1){
+				alert("제목을 입력해주세요");
+				return false;
+			}
+        	
+            if (confirm(fnGetMessage('common.regist.msg'))) {
+                $("#mec023mFrm").attr('action','/mec/ots/brd/insertBrd.do');
+                $("#mec023mFrm").submit();//서브밋 진행
+                return false;
+            }
+        
+	}
+
+}
+
+/**
+ * Ajax 통신
+ * Spring message Load
+ * url : /mec/com/getMessageAjax.do
+ * param : 스프링 메세지 값
+ */
+function fnGetMessage(spMessageVal){
+    var message = '';
+    $.ajax({ 
+        url: '/mec/com/getMessageAjax.do', 
+        type: "post", 
+        dataType:"json", //전송받을 형식 지정 
+        async: false,     //동기 비동기 설정
+        //data : $(".cms_board_list_form").serialize(),  //폼데이터를 직렬화해서 전송 폼전체를 전송시
+        data : {spMessageVal:spMessageVal},
+        success: function(data){  
+            //data = JSON.parse(data);
+        	message = data.message;
+        },error: function (request, status, error) { 
+            alert("입력중 에러 발생 브라우저를 재시작 후에 시도해 주세요"); 
+        } 
+    });
+    
+    return message;
+}
+
+function fnLoading(){
+	 
+    $( ".loading_layer" ).dialog({
+    	dialogClass: "hide-title-bar",
+		//이벤트 발생했을때 보여주려면 autoOpen : false로 지정해줘야 한다.
+		autoOpen: false,
+		//레이어팝업 넓이
+		width: 430,
+		height: 310,
+		//뒷배경을 disable 시키고싶다면 true
+		modal: true
+		//버튼종류
+		/*
+		,buttons: [
+			{
+				//버튼텍스트
+				text: "Ok",
+				//클릭이벤트발생시 동작
+				click: function() {
+					$( this ).dialog( "close" );
+				}
+			},
+			{
+				//버튼텍스트
+				text: "Cancel",
+				//클릭이벤트발생시 동작
+				click: function() {
+					$( this ).dialog( "close" );
+				}
+			}
+		]
+		*/
+	});
+    $(".loading_layer").dialog().parents(".ui-dialog").find(".ui-dialog-titlebar").remove();
+    $( ".loading_layer" ).dialog( "open" );
+}
+
+function fnBrdEduDataReg(){
+	
+    $("#mec023mFrm").attr('action','/mec/ots/brd/regs.do');
+    $("#mec023mFrm").submit();//서브밋 진행
+}
+
+function fnMovieUpload(){
+	
+	var url = 'http://www.econoedu.go.kr:8088/vod/vodUpload.action';
+	var param="?smbaSeq="+($('#smbaseq').val())+"&apiReturnUrl=http://www.econoedu.go.kr/mec/com/brd/returnMovie.do&serviceYn=Y";
+	var win = window.open(url+param, '_movieSearch',  'width=400, height=900, toolbar=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=no' );
+	
+	var timer = setInterval(function() {   
+	    if(win.closed) {
+	        clearInterval(timer);
+	        
+	        $.ajax({ 
+	            url: '/mec/com/brd/getMovieInfo.do?smbaseq='+$('#smbaseq').val(), 
+	            type : 'GET',
+	            dataType:"json", //전송받을 형식 지정 
+	            async: false,     //동기 비동기 설정
+	            //data : $(".cms_board_list_form").serialize(),  //폼데이터를 직렬화해서 전송 폼전체를 전송시
+	            success: function(data){  
+	            	if(data != null && (data.originalFileName != null || data.originalFileName != '' || data.originalFileName != undefined)){
+		            	$('#inp04').val(data.originalFileName);
+		            	$('#mediaId').val(data.mediaId);
+		            	$('#mediaFileWidth').val(data.width);
+		            	$('#mediaFileHeight').val(data.height);
+		            	fnLoading();
+		            	var html = '';
+		            	html +='<div class="ico"></div>';
+		            	html +='<p><strong>동영상 변환 처리중입니다</strong><span>잠시만 기다려 주세요</span></p>';		            	
+		            	$('.popup').html(html);
+		            	fnGetPercent(data.mediaId);
+	            	}
+	            },error: function (request, status, error) { 
+	                alert("입력중 에러 발생 브라우저를 재시작 후에 시도해 주세요"); 
+	            } 
+	        });
+	    }
+	}, 1000); 
+}
+
+function fnGetPercent(mediaId){
+	var perTimer = setInterval(function() {   
+	    //if(win.closed) {
+	        //clearInterval(timer);
+	        $.ajax({ 
+	            url: '/mec/com/brd/getVodPercent.do?mediaId='+mediaId, 
+	            type : 'GET',
+	            dataType:"json", //전송받을 형식 지정 
+	            async: false,     //동기 비동기 설정
+	            //data : $(".cms_board_list_form").serialize(),  //폼데이터를 직렬화해서 전송 폼전체를 전송시
+	            success: function(data){  
+	            	if(data != null && (data.originalFileName != null || data.originalFileName != '' || data.originalFileName != undefined)){
+		            	//alert('' + data.eqPercent);
+		            	if(data.eqPercent == '100.00'){
+		            		$( ".loading_layer" ).dialog( "close" );
+		            		clearInterval(perTimer);
+
+		            	}else{
+		            		
+		            	}
+	            	}
+	            },error: function (request, status, error) { 
+	                alert("입력중 에러 발생 브라우저를 재시작 후에 시도해 주세요"); 
+	            } 
+	        });
+	    //}
+	}, 1000); 
+}
+
+function fnMovieDel(){
+
+	if($('#smbaseq').val() != ''){
+        $.ajax({ 
+            url: '/mec/com/brd/deleteMovieInfo.do?mediaId='+$('#mediaId').val(), 
+            type : 'GET',
+            dataType:"json", //전송받을 형식 지정 
+            async: false,     //동기 비동기 설정
+            //data : $(".cms_board_list_form").serialize(),  //폼데이터를 직렬화해서 전송 폼전체를 전송시
+            success: function(data){  
+                //data = JSON.parse(data);
+            	//alert(data.mediaId);
+            	$('#inp04').val('');
+            	if(data.result == 'success'){
+            		alert('삭제 되었습니다.');
+            	}
+            },error: function (request, status, error) { 
+                alert("입력중 에러 발생 브라우저를 재시작 후에 시도해 주세요"); 
+            } 
+        });
+	}
+
+}
+
+function fnGetMail(val){
+	$("#atcEmail2").val(val);
+}
+
+function fnSmallView(fileNm){
+	$('.viewImage').attr('src','/resources/atc/view/'+fileNm);
+	
+	$('#imgDownArea').html('');
+	var htmlStr = '';
+	htmlStr += '<a href="/cmm/imageDownload.do?fileNm='+fileNm+'&amp;title='+fileNm+'"  ><img src="/img/ots/EE-31000/sub_but03.gif"/></a>';
+	
+	$('#imgDownArea').html(htmlStr);
+}
+
+// 본인인증 팝업
+function fnPopAuth(){
+
+	var tplSer = $('#tplSer').val();
+	var mnuBaseId = $('#mnuBaseId').val();
+	
+	var retUrl = '/mec/ots/brd/regs.do?tplSer='+tplSer+'&mnuBaseId='+mnuBaseId;
+	
+	var url='/mec/pop/memb/authcerti.do?retUrl='+retUrl;
+	window.open(url,'_popupAuthCerti','width=750, height=550, toolbar=no, menubar=no, scrollbars=yes, resizable=yes, copyhistory=no');
+}
+
+/* 큐레이션 */
+function fnGetCloud(tplBaseId, btnChk, comUpprCd, depth){
+	//$('#sub-cont').empty();
+	if(depth == undefined)
+		depth = '';
+	$.ajax({ 
+        url: '/mec/ots/GetCloudAjax.do?tplBaseId='+tplBaseId+'&comUpprCd='+comUpprCd+ '&depth='+depth, 
+        type: 'post', 
+        //dataType:'json', //전송받을 형식 지정 
+        async: false,     //동기 비동기 설정
+        //data : $(".cms_board_list_form").serialize(),  //폼데이터를 직렬화해서 전송 폼전체를 전송시
+        success: function(data){  
+        	
+        	console.log(data);
+        	
+        	$('#sub_content').empty();
+        	$('#sub_content').append("<div id='jq_content' class='ns1024-e-cont'></div>");
+        	if(depth != ''){
+	        	$('.sub-tab04 > ul > li > a ').removeClass("on");
+	        	$('.sub-tab04 > ul > li.' + btnChk + ' > a ').addClass("on");
+        	}
+        	//$('.left-deapth2 > li > a ').removeClass("ov");
+        	//$('.left-deapth2 > li#' + btnChk + ' > a ').addClass("ov");
+        	
+        	var listData = new Array;
+        	var colorData = ["#c99e1b", "#e28672", "#945499", "#90396f", "#d33e4a", "#31312a", "#70a7a8", "#626fa0", "#317095",
+        		           "#17549f","#006571","#94b73f","#57b28e","#008e6d","#477161","#626555e"];
+        	var weight = 0;
+        	var count = 1;
+        	var sub1 = Array();
+        	
+        	$.each(data, function(i) {
+        		
+        		weight = Math.floor(Math.random()*8);
+        		//console.log( data[i].comBaseCd.substr(6,1));
+        		var obj = {
+        				text: data[i].comVal.substr(0,20),
+        				weight: weight,
+        				link: "/mec/ots/cms/search.do?word="+data[i].comBaseCd,
+        				color : data[i].comTcolor
+        		}
+        		//console.log(count+ ' '+ data[i].comBaseCd + ' '+ data[i].comVal + ' '+ weight +' '+ data[i].comTcolor);
+       			sub1.push(obj);
+        		count++;
+            });
+        	
+        	    var s1 = 0.08;
+        	    if(sub1.length < 5) s1 = 0.1;
+        	  
+        		//console.log("a1:"+ sub1.length );
+        		$('#jq_content').jQCloud(sub1, {
+        		  classPattern: null,
+        		  shape: 'elliptic',
+        		  //colors: ["#c99e1b", "#e28672", "#945499", "#90396f", "#d33e4a", "#31312a", "#70a7a8", "#626fa0", "#317095",
+        		   //        "#17549f","#006571","#94b73f","#57b28e","#008e6d","#477161","#626555e"],
+        		  fontSize: {
+        			  from:0.03,
+        			  to: s1
+        		  },
+        		  removeOverflowing: true
+
+        		});
+        		
+        		/*
+        		$('#content2').jQCloud("update",words);   
+        		
+        		$('#content').jQCloud(words, {
+        			  classPattern: null,
+        			  colors: ["#c99e1b", "#e28672", "#945499", "#90396f", "#d33e4a", "#31312a", "#70a7a8", "#626fa0", "#317095",
+        			           "#17549f","#006571","#94b73f","#57b28e","#008e6d","#477161","#626555e"],
+        			  fontSize: {
+        				  from:0.1,
+        				  to: 0.02
+        			  }
+
+        			});
+        		*/
+        	            
+        },error: function (request, status, error) { 
+            alert("입력중 에러 발생 브라우저를 재시작 후에 시도해 주세요"); 
+        } 
+    });
+   
+}
+
+
+
+
+
+function fnGetContent(tplBaseId, btnChk, indx){
+	//var codeList = new Array();
+    $.ajax({ 
+        url: '/mec/ots/getContentAjax.do?tplBaseId='+tplBaseId, 
+        type: 'post', 
+        //dataType:'json', //전송받을 형식 지정 
+        async: false,     //동기 비동기 설정
+        //data : $(".cms_board_list_form").serialize(),  //폼데이터를 직렬화해서 전송 폼전체를 전송시
+        success: function(data){  
+        	
+        	//console.log(data);
+        	$('#sub-cont').empty();
+        	var house_top_link = "";
+        	if( indx > 0 && indx < 20 ){
+	        	var p = 0;
+	        	var txtArr;
+	        	if( btnChk == "sub-tli3"){
+	        		txtArr = [
+	        			["01","청약통장 가입"],
+	        			["02","청약대상 선정"],
+	        			["03","분양광고 확인하기"],
+	        			["04","입주자모집 공고 확인"],
+	        			["05","견본주택 꼼꼼히 보기"],
+	        			["06","청약 전략 수립"],
+	        			["07","청약 접수"],
+	        			["08","당첨자 확인"],
+	        			["09","계약하기"],
+	        			["10","중도금 납입"],
+	        			["11","사전점검"],
+	        			["12","잔금납입"],
+	        			["13","잔금대출"],
+	        			["14","입주"],
+	        			["15","등기하기"],
+	        			["16","스스로 등기하기"]
+	        		];
+	        	}else if(btnChk == "sub-tli4"){
+	        		txtArr = [
+		  	        			["01","자금계획"],
+		  	        			["02","구입대상<Br/>우선순위 결정"],
+		  	        			["03","매입대상 선정"],
+		  	        			["04","공인중개사 방문"],
+		  	        			["05","임장 현장조사"],
+		  	        			["06","실거래가 확인"],
+		  	        			["07","대춯확인"],
+		  	        			["08","집 상태 확인"],
+		  	        			["09","계약하기"],
+		  	        			["10","대출받기"],
+		  	        			["11","잔금지불과 입주"],
+		  	        			["12","등기하기"]
+		  	        		];
+		        }else if(btnChk == "sub-tli5"){
+	        		txtArr = [
+		  	        			["01","5(10)년공공<br/>임대주택"],
+		  	        			["02","분납임대<br/>주택"],
+		  	        			["03","영구임대<br/>주택"],
+		  	        			["04","국민임대<br/>주택"],
+		  	        			["05","장기전세<br/>주택"],
+		  	        			["06","민간임대<br/>주택"]
+		  	        		];
+		        }
+	        	if( btnChk == "sub-tli3" || btnChk == "sub-tli4"){
+	        		house_top_link = "<div class=\"s2-hsc-tmu s2-hsc-tmu2\">";
+		        	for( i = 1; i< houseArr.length; i++){
+		        		if( i%4 == 1 && p == 0 ){
+		        			house_top_link += "<ul class=\"s2-hsc-tmul clearfix\">";
+		        			p++;
+		        		}else if(i%4 == 1 && (p == 1 || p == 3)){
+		        			house_top_link += "<ul class=\"s2-hsc-tmul2 clearfix\">";
+		        			p++;
+		        		}else if(i%4 == 1 && p == 2 ){
+		        			house_top_link += "<ul class=\"s2-hsc-tmul s2-hsc-tmul3 clearfix\">";
+		        			p++;
+		        		}
+		        		house_top_link += "<li class=\"s2-hsc-tmli"+i+"\"><a ";
+		        		if( indx == i ){
+		        			house_top_link += "class=\"on\";";
+		        		}
+		        		house_top_link += " href=\"javascript:fnGetContent('"+houseArr[i]+"','"+btnChk+"', "+i+");\">";
+		        		house_top_link += "<span class=\"s2-hsc-tms1 clearfix\"><span class=\"s2-hsc-tms2\">"+ txtArr[i-1][0]+"</span>";
+		        		house_top_link += "<span class=\"s2-hsc-tms3 ";
+		        		if( btnChk == "sub-tli4" && i == 2){
+		        			house_top_link += " st-s3 ";
+		        		}
+		        		house_top_link += "\">"+ txtArr[i-1][1]+"</span></span> </a>";
+		        		if(i < houseArr.length-1){
+		        			house_top_link += "<p> </p>";
+		        		}
+		        		house_top_link += "</li>";
+		        		if( i%4 == 0  ){
+		        			house_top_link += "</ul>";
+		        		}
+		        	}
+	        	}else if( btnChk == "sub-tli5" ){
+	        		house_top_link = "<div class=\"s2-hs5-smu\">";
+	        		house_top_link += "<ul class=\"clearfix\">";
+	        		for( i = 1; i< houseArr.length; i++){
+	        			house_top_link += "<li class=\"s2-hs5-sli"+i+"\"><a ";
+		        		if( indx == i ){
+		        			house_top_link += "class=\"on\";";
+		        		}
+		        		house_top_link += " href=\"javascript:fnGetContent('"+houseArr[i]+"','"+btnChk+"', "+i+");\">";
+		        		house_top_link += "<span>"+ txtArr[i-1][1]+"</span></a>";
+		        		house_top_link += "</li>";
+	        		}
+	        		house_top_link += "</ul></div>";
+	        	}
+	        	
+        	
+        	} 
+        	
+        	
+        	$('#sub-cont').append(data);
+        	
+        	$('#sub-cont2').empty();
+        	$('#sub-cont2').append(house_top_link);
+        	
+        	$('#div_house').hide();
+        	$('#div_house_sale').hide();
+        	$('.sub-tab01 > ul > li > a ').removeClass("on");
+        	$('.sub-tab01 > ul > li.' + btnChk + ' > a ').addClass("on");
+        	$('.left-deapth2 > li > a ').removeClass("ov");
+        	$('.left-deapth2 > li#' + btnChk + ' > a ').addClass("ov");
+        	
+        	$('#house_btn_off').hide();
+        	//$('#house_btn_on').show();
+        	
+        	if( btnChk == "sub-tli3" || btnChk == "sub-tli4" || btnChk == "sub-tli5"){
+        		if( btnChk == "sub-tli3" ) { 
+        			houseArr =  new Array(
+	        			"5cfd6be5-97cf-4d0c-8a52-2e0aae1afd85",
+	        			"119117a0-2501-4188-88a1-0d998fff4550",
+	        			"0e84ee17-ec3e-49da-9963-0da4371d9b38",
+	        			"da417a6a-8001-4faa-b46a-12f980dfa562",
+	        			"422158aa-313c-45ff-bad2-727f7c27c758",
+	        			"221b5a38-9320-48d0-a707-ce8e78910946",
+	        			"ac50ee81-3f38-4368-8d86-ca9dcaf1e33a",
+	        			"648649b3-3ff9-445c-8bf7-4d505e6354ea",
+	        			"c5f8e495-7f3d-4ec3-bbda-7f0f6d1b037c",
+	        			"f8ab4a65-fa6f-4200-a27a-6c0fc51a0828",
+	        			"0b154a4e-0f64-4c10-a503-cc2da4696330",
+	        			"236fc4d7-54db-4e5b-8783-8183d2af496d",
+	        			"ad0349fb-ee84-4fd2-9efa-2ec5ea8449bf",
+	        			"95dd10d0-07c3-41bd-a9f6-6cbae42a0a8b",
+	        			"fca19d3a-1a0c-4d5e-81f1-62edf9d54df3",
+	        			"fe8a021f-53a2-4c3c-b605-779dda30dee6",
+	        			"90f819d2-d2c2-4fe9-8816-11245d99b0a9");
+        		}else if( btnChk == "sub-tli4" ) { 
+        			houseArr =  new Array(
+        					"4ffb46c3-dcd1-42bf-b15d-c89d3105558f",
+    	        			"78493101-f235-43f2-875a-78a985bfe64a",
+    	        			"3bed5589-c47e-45f0-b16e-d22c5f0fa007",
+    	        			"56be2a28-48d6-47ed-beb0-2617b370d0aa",
+    	        			"81fc82c7-2f69-465e-ae71-50c5b0343b93",
+    	        			"01303b74-1036-497d-8f6d-4e5bcbdac966",
+    	        			"6c39823c-b443-4f3b-8b46-8ad8da68d719",
+    	        			"db4c25b7-86f8-4d57-a450-10b396ac5b7d",
+    	        			"45f23018-f1e0-42df-ac78-e2c82f1656e7",
+    	        			"4c00c428-2d10-4f51-8274-c4bd47456d89",
+    	        			"ec885c31-9f57-4f71-a461-96c5c17c0361",
+    	        			"73977ab4-83db-425a-9120-a78b56b9efad",
+    	        			"b28dce86-e9a6-4053-b6fd-b24a8ec92a6b");
+            	}else if( btnChk == "sub-tli5" ) { 
+        			houseArr =  new Array(
+        					"206ec9b9-2e4a-4cbc-b0ba-c1ee18cd7a26",
+    	        			"f3ca29fa-1577-49c3-a088-2e54a094c5e1",
+    	        			"62a6d79c-4425-469e-8835-810607519247",
+    	        			"370888ad-7946-40ec-b498-3264940d6ad4",
+    	        			"96ba03b9-0ee4-497d-b480-f80d9af7bd51",
+    	        			"378f6b13-602e-46ff-9d67-f99a03bab4a5",
+    	        			"88869e36-5ee6-4c61-b64b-6025ca979bec");
+            	}
+	        	
+        		linkfirst = "<div class=\"next-btn-di\" ><a class=\"nbtn-a1\" href=\"javascript:fnGetContent('"+houseArr[1]+"','"+btnChk+"',1);\">시작하기</a></div>";
+            	linkLast = "<div class=\"next-btn-di\"><a class=\"nbtn-a4\" href=\"javascript:fnGetContent('"+houseArr[0]+"','"+btnChk+"',100);\">처음으로 가기</a></div>";
+            	
+            	if( btnChk == "sub-tli3" || btnChk == "sub-tli4" ){
+		        	if(tplBaseId == houseArr[0] ){
+		        		$('#sub-cont').append(linkfirst);
+		        	}else if(tplBaseId == houseArr[houseArr.length-1]){
+		        		$('#sub-cont').append(linkLast);
+		        	}else{
+		        		for( j = 0 ; j < houseArr.length; j++){
+		        			if( houseArr[j] == tplBaseId){
+		        				$('#sub-cont').append("<div class=\"next-btn-di\"><a class=\"nbtn-a2\" href=\"javascript:fnGetContent('"+houseArr[j-1]+"','"+btnChk+"', "+(j-1)+");\"><span>이전 단계로 이동</span></a> <a class=\"nbtn-a3\" href=\"javascript:fnGetContent('"+houseArr[j+1]+"','"+btnChk+"',"+(j+1)+");\"><span>다음 단계로 이동</span></a></div>");
+		        			}
+		        		}
+		        	}
+            	}else if(btnChk == "sub-tli5"  ){
+            		
+            		if(tplBaseId == houseArr[0]){
+	            		txtArr = [
+			  	        			["01","5(10)년공공<br/>임대주택"],
+			  	        			["02","분납임대주택"],
+			  	        			["03","영구임대주택"],
+			  	        			["04","국민임대주택"],
+			  	        			["05","장기전세주택"],
+			  	        			["06","민간임대주택"]
+			  	        		];
+	            		
+	            		var house_top_link2 = "<div class=\"s2-hs5-mmu\">";
+		        		house_top_link2 += "<ul class=\"clearfix\">";
+		        		for( i = 1; i< houseArr.length; i++){
+		        			house_top_link2 += "<li class=\"s2-hs5-mli"+i+"\"><a ";
+			        		house_top_link2 += " href=\"javascript:fnGetContent('"+houseArr[i]+"','"+btnChk+"', "+i+");\">";
+			        		house_top_link2 += "<span>"+ txtArr[i-1][1]+"</span></a>";
+			        		house_top_link2 += "</li>";
+		        		}
+		        		house_top_link2 += "</ul></div>";
+		        		$('#sub-cont2').append(house_top_link2);
+            		}else if(tplBaseId == houseArr[houseArr.length-1]){
+		        		$('#sub-cont').append(linkLast);
+		        	}else{
+		        		for( j = 0 ; j < houseArr.length; j++){
+		        			if( houseArr[j] == tplBaseId){
+		        				$('#sub-cont').append("<div class=\"next-btn-di\"><a class=\"nbtn-a2\" href=\"javascript:fnGetContent('"+houseArr[j-1]+"','"+btnChk+"', "+(j-1)+");\"><span>이전 단계로 이동</span></a> <a class=\"nbtn-a3\" href=\"javascript:fnGetContent('"+houseArr[j+1]+"','"+btnChk+"',"+(j+1)+");\"><span>다음 단계로 이동</span></a></div>");
+		        			}
+		        		}
+		        	}
+	        		
+            	}// end sub-tli
+	        	
+	        	
+        	}
+        	
+        	
+        		
+        },error: function (request, status, error) { 
+            alert("입력중 에러 발생 브라우저를 재시작 후에 시도해 주세요"); 
+        } 
+    });
+    //return codeList;
+}
+
+
+function fnGetStockContent(tplBaseId, btnChk, indx){
+	//var codeList = new Array();
+	
+
+    $.ajax({ 
+        url: '/mec/ots/getContentAjax.do?tplBaseId='+tplBaseId, 
+        type: 'post', 
+        //dataType:'json', //전송받을 형식 지정 
+        async: false,     //동기 비동기 설정
+        //data : $(".cms_board_list_form").serialize(),  //폼데이터를 직렬화해서 전송 폼전체를 전송시
+        success: function(data){  
+        	
+        	//console.log(data);
+        	$('#sub-cont').empty();
+        	
+        	
+        	
+        	$('#sub-cont').append(data);
+        	
+        	$(function(){
+        		$(".see-more > dt").click(function(){
+        			if($(this).parent(".see-more").hasClass("on")){
+        				$(this).next("dd > *").slideUp("fast");
+        				$(this).parent(".see-more").removeClass("on");
+        			}else{
+        				$(this).next("dd > *").slideDown("fast");
+        				$(this).parent(".see-more").addClass("on");
+        			}
+        		});
+        	});
+        	
+        		
+        },error: function (request, status, error) { 
+            alert("입력중 에러 발생 브라우저를 재시작 후에 시도해 주세요"); 
+        } 
+    });
+    //return codeList;
+}
+
+

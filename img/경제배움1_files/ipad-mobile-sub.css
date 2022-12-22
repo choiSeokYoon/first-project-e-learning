@@ -1,0 +1,547 @@
+
+#left-area{display:none;}
+.sub-banner{display:none;}
+#sub-contents{float:none;width:100%;}
+.sub-title{font-size:26px;}
+
+/*프린트 및 공유하기*/
+.sub-title-rt > a.st-print{display:none;}
+.sub-title-rt{position:absolute;right:0;top:-114px;display:inline-block;padding:12px 0 0 0;}
+.st-link-pop{left:0;width:calc(100% - 2px);border:1px solid #cccccc;background:#fff;}
+.st-link-pop .st-link-pm1 > a{display:inline-block;margin:0 2px 0 0;}
+.st-link-pop .st-link-pmid-but1 > a{margin:5px 0;}
+.st-link-pop .st-link-pmid-inp1 textarea{width:calc(100% - 90px);}
+.st-link-pop .st-link-pmid { padding: 0 10px;}
+.st-link-pop .st-link-pm1{margin:0 5px;padding:0 0 20px 0;}
+.st-link-pop .st-link-pmid-inp1 span.st-link-pmip-s1{width:calc(100% - 90px);}
+.st-link-pop .st-link-pmid-inp1 textarea{width:calc(100% - 10px);height:76px;font-size:13px;}
+.st-link-pop .st-link-pmid-inp1 span.st-link-pmip-s2 a{border:1px solid #cccccc;text-align:center;font-size:18px;color:#fff;background:#425787;line-height:80px;font-weight:400;width:80px;height:80px; }
+.st-link-pop .st-link-pmid-but2{text-align:center;margin:30px 0 35px 0;}
+
+
+/* sub 콘텐츠 시작*/
+#sub-cont{margin-bottom:10px;}
+
+/* sub1_1 소개*/
+.economic1 {margin:0;}
+.economic1 li{width:100%;float:none;}
+.economic1 li.num3{float:left;margin:0 0 30px 0;}
+.economic1 li > h3{width:100%;height:70px;line-height:70px;font-size:18px;color:#fff;font-weight:bold;}
+
+	/* sub 하단공통 (페이지 수)*/
+.sub-con-page{padding:20px 0 15px 0;text-align:center;}
+
+/* sub1_2 동영상 보기*/
+
+.sub1-video-play img{width:100%;height:100%;}
+.sub1-video-play iframe{width:100%;height:420px;}
+.sub-con-top > p{position:relative;float:right;right:0;bottom:0;padding:10px 15px 0 0;margin:0 0 -10px 0}
+.sub1-video-txt { padding: 20px 10px;}
+.sub1-video-list{width:100%;}
+.sub1-video-list > ul > li{margin:0 8px;width:171px;}
+
+/* sub1_4 온라인배움터*/
+.sub1-learn-st span.sub1-learn-sts1{;padding: 0 0 15px 12px;display:block;}
+.sub1-learn-st span.sub1-learn-sts2{padding:0 0 5px 0;width:49%;}
+.sub1-learn-st span.sub1-learn-sts3{text-align:center;width:100%;}
+.sub1-learn-st span.sub1-learn-sts3 span{text-align:center;font-weight:bold;padding:0 0 5px 0;}
+.sub1-learn-st span.sub1-learn-sts3 a{line-height:24px;display:inline-block;text-align:center;}
+
+.sub1-learn-sb span{display:block;}
+.sub1-learn-sb span.sub1-learn-sbs1{padding: 0 0 15px 12px;margin-top:7px;width:100%;}
+.sub1-learn-sb span.sub1-learn-sbs2{text-align:center;float:left;}
+.sub1-learn-sb select{width:100px;height:32px;border:1px solid #cccccc;font-size:15px;color:#666666;}
+.sub1-learn-sb select.two{width:80px;height:32px;border:1px solid #cccccc;font-size:15px;color:#666666;}
+.sub1-learn-sb span.sub1-learn-sbs3{margin:0;width:calc(100% - 105px);float:right;}
+.sub1-learn-sb span.sub1-learn-sbs3.two{margin:0;width:calc(100% - 168px);float:right;}
+.sub1-learn-sb span.sub1-learn-sbs3 input{margin:0;width:calc(100% - 12px);padding:0 5px;}
+.sub1-learn-sb span.sub1-learn-sbs4{float:left;margin:15px 0 0 49%;}
+.sub1-learn-sb span.sub1-learn-sbs4 > a{margin:0 0 0 -60px;}
+.sub1-learn-sb span.sub1-learn-sbs5{float:left;margin:15px 0 0 3%;}
+
+.sub1-learn-list{width:100%;margin-top:30px;border-top:2px solid #545454;}
+.sub1-learn-list > ul > li{padding:20px 2px;border-bottom:1px solid #d2d2d2; text-align: center;}
+.sub1-learn-list > ul > li > div{float:none;}
+.sub1-learn-list .sub1-learn-ltfl{padding: 0;/*text-align:center;*/}
+.sub1-learn-list .sub1-learn-ltfr{width:100%;}
+.sub1-learn-ltfr-p1 span.sub1-learn-ltfr-p1s1{float:none;line-height:24px;padding:10px 0;}
+.sub1-learn-ltfr-p1 span.sub1-learn-ltfr-p1s2{float:none;padding:0;vertical-align:middle;}
+.sub1-learn-ltfr-p2{padding:12px 5px 8px 5px;text-align: left;}
+.sub1-learn-ltfr-p3 span.sub1-learn-ltfr-p3s1{padding:0 0 10px 18px;display:block;float:left;}
+.sub1-learn-ltfr-p3 span.sub1-learn-ltfr-p3s2{display:block;float:right;margin:0 0 0 5px;}
+
+
+/* sub1_5 한줄 경제용어사전*/
+/* .sub1-dict-list > ul.bor-top li + li + li{border-top:0;}
+.sub1-dict-list > ul.bor-top li + li + li + li{border-top:0;}
+.sub1-dict-list > ul > li{width:calc(50% - 1px);}
+.sub1-dict-list > ul.sub1-dict-list-ul1 li {background:#f5f5f5 !important;}
+.sub1-dict-list > ul.sub1-dict-list-ul1 li + li{background:#fff !important;}
+.sub1-dict-list > ul.sub1-dict-list-ul1 li + li + li{background:#fff !important;}
+.sub1-dict-list > ul.sub1-dict-list-ul1 li + li + li + li{background:#f5f5f5 !important;}
+
+.sub1-dict-list > ul.sub1-dict-list-ul2 li {background:#f5f5f5 !important;}
+.sub1-dict-list > ul.sub1-dict-list-ul2 li + li{background:#fff !important;}
+.sub1-dict-list > ul.sub1-dict-list-ul2 li + li + li{background:#fff !important;}
+.sub1-dict-list > ul.sub1-dict-list-ul2 li + li + li + li{background:#f5f5f5 !important;} */
+
+
+/* sub2_3_1 자동차구매플랜 안내*/
+.sub-con-top > ul { padding: 0 10px 0 22px;}
+.sub2-plan-list{margin-top:38px;}
+.sub2-plan-list > ul > li{float:none;margin:0 0 15px 0;}
+.sub2-plan-list > ul > li.sub2-plan-list-li3{margin-right:0;}
+.sub2-pli-img{width:calc(100% - 2px);border:1px solid #cccccc;border-bottom:0;text-align:center;}
+.sub2-pli-img img{padding:27px 0;}
+.sub2-pli-txt{width:100%;height:60px;padding:0 0 9px 0;background: url(https://www.econedu.go.kr/img/ots/EE-21000/23100_05.gif) no-repeat bottom center;}
+.sub2-pli-txt span{display:block;font-size:20px;color:#fff;line-height:60px;font-weight:bold;text-align:center;background:#34b1bb;}
+.sub2-plan-list-li2 .sub2-pli-txt{background: url(https://www.econedu.go.kr/img/ots/EE-21000/23100_07.gif) no-repeat bottom center;}
+.sub2-plan-list-li2 .sub2-pli-txt span{background:#2f74ab;}
+.sub2-plan-list-li3 .sub2-pli-txt{background:none;padding:0;}
+.sub2-plan-list-li3 .sub2-pli-txt span{background:#425787;}
+
+.sub2-plan-list-but{text-align:center;margin-top:30px;}
+
+
+
+/* sub2_3_1_1 자동차구매플랜 안내 > 구매이전*/
+.sub2-311-navi{height:57px;background:#f6f9ff;border:1px solid #c6cad2;border-radius:5px;overflow:hidden;}
+.sub2-311-navi li{float:left;width:33%;text-align:center;line-height:57px;font-size:16px;color:#333333;font-weight:400;background:#425787;}
+.sub2-311-navi li.sub2-311-navi-li3{width:34% ;}
+.sub2-311-navi li > span{padding-right:15px;background:#f6f9ff;display:block;}
+.sub2-311-navi li.on{background:#425787;color:#fff;}
+.sub2-311-navi li.on span{background:#425787;}
+.sub2-311-navi li.sub2-311-navi-li1 span,
+.sub2-311-navi li.sub2-311-navi-li2 span{background:#f6f9ff url(https://www.econedu.go.kr/img/ots/EE-21000/23110_10.png) no-repeat right;}
+.sub2-311-navi li.sub2-311-navi-li2.on{background: url(https://www.econedu.go.kr/img/ots/EE-21000/23110_10.png) no-repeat left;}
+.sub2-311-navi li.sub2-311-navi-li1.on span,
+.sub2-311-navi li.sub2-311-navi-li2.on span{background:#425787 url(https://www.econedu.go.kr/img/ots/EE-21000/23110_12.png) no-repeat right;}
+.sub2-311-navi li.sub2-311-navi-li3{line-height:20px;text-align:center;}
+.sub2-311-navi li.sub2-311-navi-li3 span.sub2-311-nli3-sp1{padding:8px 15px 0 0;}
+.sub2-311-navi li.sub2-311-navi-li3 span.sub2-311-nli3-sp2{padding:0;display:block;}
+.sub-con-top.sub2-311-top > ul > li{letter-spacing:-0.5px;}
+
+.sub2-311-order{width:100%;height:auto;margin-top:30px;background:#f4f5f6 ;}
+.sub2-311-ord-pad{padding:36px 30px 0 30px;}
+.sub2-311-ord-pad > ul > li{float:none;padding:0 0 35px 0;margin:0 0 10px 0 !important;background:url(https://www.econedu.go.kr/img/ots/EE-21000/23110_15.png) no-repeat center bottom;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli1{margin:0;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli4{margin:0;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli7{margin:0;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli3{margin:0;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli6{margin:0;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli9{margin:0;background:none;}
+.sub2-311-ord-pad > ul > li > span{text-align:center;width:100%;height:54px;background:#fff;border:1px solid #b9b9b9;display:block;font-size:16px;color:#333333; border-radius:5px;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli1 > span{background:#fff;border:1px solid #b9b9b9;width:100%;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli2 > span{background:#fff;border:1px solid #b9b9b9;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli3 > span{background:#f0605f;border:1px solid #f0606f;color:#fff;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli4 > span{background:#fff;border:1px solid #b9b9b9;width:100%;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli5 > span{background:#f0605f;border:1px solid #f0606f;color:#fff;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli6 > span{background:#fff;border:1px solid #b9b9b9;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli7 > span{background:#f0605f;border:1px solid #f0606f;color:#fff;width:100%;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli8 > span{background:#fff;border:1px solid #b9b9b9;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli9 > span{background:#2f74ab;border:1px solid #2f73ab;color:#fff;}
+.sub2-311-ord-pad > ul > li > span > span{display:block;padding:17px 0 0 0 ;}
+.sub2-311-ord-pad > ul > li.sub2-311-oli2 > span > span,
+.sub2-311-ord-pad > ul > li.sub2-311-oli3 > span > span,
+.sub2-311-ord-pad > ul > li.sub2-311-oli5 > span > span,
+.sub2-311-ord-pad > ul > li.sub2-311-oli7 > span > span{padding:8px 0 0 0;}
+
+.sub2-311-cost{border:1px solid #c6cad2;position:relative;}
+.sub2-311-cost > ul > li {float:left;}
+.sub2-311-cost > ul > li.sub2-311-cost-li1{position:absolute;left:5px;top:50%;margin:-55px 0 0 0;float:none;}
+.sub2-311-cost > ul > li.sub2-311-cost-li2{width:1px;height:110px;}
+.sub2-311-cost > ul > li.sub2-311-cost-li3{float:right;width:calc(100% - 135px);padding:20px 5px 20px 10px;background:#f6f9ff;}
+.sub2-311-cost > ul > li.sub2-311-cost-li3 > ul > li{ letter-spacing:-1px;font-size: 15px;color: #454545; padding: 5px 0 5px 13px; background: url(https://www.econedu.go.kr/img/ots/EE-11000/economic2_01.gif) no-repeat left 11px;}
+.sub2-311-cost > ul > li.sub2-311-cost-li3 > ul > li span{color:#d83c3a;}
+
+.sub2-311-btom{margin:0 20px 0 20px;}
+.sub2-311-btom li{font-size: 15px;line-height:22px;color: #454545; padding: 0 0 0 13px ; margin:30px 0 0 0;background: url(https://www.econedu.go.kr/img/ots/EE-11000/economic2_01.gif) no-repeat left 7px;}
+
+.sub2-311-btn{text-align:center;margin:40px 0 0 0;}
+
+
+/* sub2_3_1_2 자동차구매플랜 안내 > 구매*/
+.sub-ul-dot li{line-height:24px;padding:0 0 0 13px;background:url(https://www.econedu.go.kr/img/ots/EE-11000/economic2_01.gif) no-repeat left 9px;color:#454545;}
+
+.sub2-312-flow{text-align:center;}
+.sub2-312-flow-dl1{width:100%;float:none;text-align:center;}
+.sub2-312-flow-dl2{float:none;margin:0 0 0 12px;width:100%;margin:30px 0 0 0;text-align:center;}
+.sub2-312-flow > dl.sub2-312-flow-dl1 > dt{padding:0 0 20px 0;width:100%;text-align:center;background: url(https://www.econedu.go.kr/img/ots/EE-21000/23120_01.png) no-repeat bottom center;background-size:100% 100%;}
+.sub2-312-flow > dl.sub2-312-flow-dl2 > dt{padding:0 0 20px 0;width:100%;text-align:center;background: url(https://www.econedu.go.kr/img/ots/EE-21000/23120_02.png) no-repeat bottom center;background-size:100% 100%;}
+.sub2-312-flow > dl > dt > span{border-radius:3px;display:inline-block;width:142px;height:54px;border:1px solid #425786;line-height:54px;font-size:16px;color:#fff;background:#425787;}
+.sub2-312-flow > dl.sub2-312-flow-dl2 > dt > span{border:1px solid #2f74ab;background:#2f73ab;}
+.sub2-312-flow > dl > dd{border-radius:3px;margin:0 2% 0 0;width:30%;height:54px;border:1px solid #b9b9b9;line-height:54px;text-align:center;font-size:15px;color:#333333;display:inline-block;;float:none;}
+.sub2-312-flow > dl.sub2-312-flow-dl2 > dd{width:47%;}
+.sub2-312-flow > dl > dd.sub2-312-flow-dd3{margin:0;}
+
+.sub2-312-flow-p2.sub-p-dot{letter-spacing:-1px;color:#454545;}
+
+.sub2-312-flow-p3{background:#f5f5f5;height:44px;line-height:44px;text-align:center;color:#333333;font-weight:bold;}
+
+.sub2-312-btm .sub2-312-btm-ul li{width:100%;margin:0 0 30px 0;}
+.sub2-312-btm .sub2-312-btm-ul li.num1{float:none;}
+.sub2-312-btm .sub2-312-btm-ul li.num2{float:none;}
+.sub2-312-btm .sub2-312-btm-ul li.num3{float:none;}
+.sub2-312-btm .sub2-312-btm-ul li.num4{float:none;}
+.sub2-312-btm .sub2-312-btm-ul li > h3{width:100%;height:70px;line-height:70px;font-size:18px;color:#fff;font-weight:bold;text-align:center;}
+.sub2-312-btm .sub2-312-btm-ul li.num1 > h3{background:#425787;}
+.sub2-312-btm .sub2-312-btm-ul li.num2 > h3{background:#2f74ab;}
+.sub2-312-btm .sub2-312-btm-ul li.num3 > h3{background:#34b1bb;}
+.sub2-312-btm .sub2-312-btm-ul li.num4 > h3{background:#f0605f;}
+.sub2-312-btm .sub2-312-btm-ul li > div{border:1px solid #cecece;border-top:0;width:calc(100% - 2px);padding:30px 0;}
+.sub2-312-btm .sub2-312-btm-ul li > div > div{padding:10px;height:auto;}
+.sub2-312-btm .sub2-312-btm-ul li > div > div.num-div2{height:auto;}
+.sub2-312-btm .sub2-312-btm-ul li.num1 > div{background: url(https://www.econedu.go.kr/img/ots/EE-11000/economic1_16.jpg) no-repeat top center;}
+.sub2-312-btm .sub2-312-btm-ul li.num2 > div{background: url(https://www.econedu.go.kr/img/ots/EE-11000/economic1_17.jpg) no-repeat top center;}
+.sub2-312-btm .sub2-312-btm-ul li.num3 > div{background: url(https://www.econedu.go.kr/img/ots/EE-11000/economic1_18.jpg) no-repeat top center;}
+.sub2-312-btm .sub2-312-btm-ul li.num4 > div{background: url(https://www.econedu.go.kr/img/ots/EE-11000/economic1_19.jpg) no-repeat top center;}
+.sub2-312-btm .sub2-312-btm-ul li > div p.sub-p-dot{line-height:22px;color:#626262;font-size:16px;letter-spacing:-1px;}
+
+.sub2-312-but{text-align:center;margin:40px 0 0 0;}
+
+
+/* sub2_3_1_3 자동차구매플랜 안내 > 구매이후*/
+.sub2-313-con .sub2-313-con-ul li{width:100%;margin:0 0 30px 0;}
+.sub2-313-con .sub2-313-con-ul li.num1{float:none;width:100%;}
+.sub2-313-con .sub2-313-con-ul li.num2{float:none;}
+.sub2-313-con .sub2-313-con-ul li.num3{float:none;}
+.sub2-313-con .sub2-313-con-ul li > h3{width:100%;height:70px;line-height:70px;font-size:18px;color:#fff;font-weight:bold;text-align:center;}
+.sub2-313-con .sub2-313-con-ul li.num1 > h3{background:#425787;}
+.sub2-313-con .sub2-313-con-ul li.num2 > h3{background:#2f74ab;}
+.sub2-313-con .sub2-313-con-ul li.num3 > h3{background:#34b1bb;}
+.sub2-313-con .sub2-313-con-ul li > div{border:1px solid #cecece;border-top:0;width:calc(100% - 2px);padding:30px 0;}
+.sub2-313-con .sub2-313-con-ul li > div > div{padding:10px;height:auto;}
+.sub2-313-con .sub2-313-con-ul li > div > div.num-div2{height:auto;}
+.sub2-313-con .sub2-313-con-ul li > div > div.num-div3{height:auto;}
+.sub2-313-con .sub2-313-con-ul li.num1 > div{background: url(https://www.econedu.go.kr/img/ots/EE-11000/economic1_16.jpg) no-repeat top center;}
+.sub2-313-con .sub2-313-con-ul li.num2 > div{background: url(https://www.econedu.go.kr/img/ots/EE-11000/economic1_17.jpg) no-repeat top center;}
+.sub2-313-con .sub2-313-con-ul li.num3 > div{background: url(https://www.econedu.go.kr/img/ots/EE-11000/economic1_18.jpg) no-repeat top center;}
+.sub2-313-con .sub2-313-con-ul li > div p.sub-p-dot{line-height:22px;color:#626262;font-size:16px;letter-spacing:-1px;}
+
+
+/* sub2_4_1 나에게 맞는 경제교육의 필요성*/
+.sub2-me-ctgy{margin-top:30px;background:#fff;border:0;}
+.sub2-me-ctgy p{margin-left:0;height:auto;}
+.sub2-me-cpad{padding:20px 0;margin:10px 0 0 0;width:100%;height:auto;background: none;width:calc(100% - 2px); border:1px solid #d2d2d2;}
+.sub2-me-cpos{position:relative;padding:0 6%;}
+.sub2-me-cpos > ul{text-align:center;}
+.sub2-me-cpos > ul > li{position:relative;float:left;width:46%;text-align:center;padding:10px 2%}
+.sub2-me-cpos > ul > li > a{width:117px;}
+.sub2-me-cpos > ul > li img{width:100%;}
+.sub2-me-cpos > ul > li.sub2-mc-li1{top:0;left:0;}
+.sub2-me-cpos > ul > li.sub2-mc-li2{top:0;left:0;}
+.sub2-me-cpos > ul > li.sub2-mc-li3{top:0;left:0;}
+.sub2-me-cpos > ul > li.sub2-mc-li4{top:0;left:0;}
+.sub2-me-cpos > ul > li.sub2-mc-li5{top:0;left:0;}
+.sub2-me-cpos > ul > li.sub2-mc-li6{top:0;left:0;}
+.sub2-me-cpos > ul > li.sub2-mc-li7{top:0;left:0;}
+.sub2-me-cpos > ul > li.sub2-mc-li8{top:0;left:0;}
+
+
+.sub2-me-list{margin:30px 0 0 0;}
+.sub2-me-list-title{font-size:17px;letter-spacing:-1px;background: url(https://www.econedu.go.kr/img/ots/EE-21000/24100_12.png) no-repeat left 1px;}
+/* 20210407 */
+/*.sub2-me-list-ul1{border-top:2px solid #545454;margin:10px 0 0 0;width:100%;}
+.sub2-me-list-ul1 > li{border-bottom:2px solid #545454;}
+.sub2-me-lul1-p1{padding:120px 10px 15px 5px;}
+.sub2-me-lul1-p1 span.sub2-me-lul2-ps2{margin:5px 0 5px 10px;}
+.sub2-me-list-ul2{float:left;width: calc(100% - 133px);}
+.sub2-me-list-ul2 li{border-left:1px solid #e1e1e1;height:auto;width:100%;float:left;padding:0 0 35px 0;}
+.sub2-me-list-ul1 > li + li + li li{height:auto !important;}
+.sub2-me-list-ul1 > li + li + li + li li{height:auto !important;}
+.sub2-me-list-ul1 > li + li + li + li + li li{height:auto !important;}
+.sub2-me-list-ul2 li + li + li{;width:100% !important;}
+.sub2-me-list-ul2 dt{padding:13px 0 13px 15px;background:#f5f5f5;border-bottom:0px solid #e1e1e1;border-top:1px solid #e1e1e1;margin-bottom:13px;}
+.sub2-me-list-ul2 dt > label{font-size:14px;color:#333333;padding:0 0 0 8px;letter-spacing:-1px;}
+.sub2-me-list-ul2 dd{padding:4px 0 4px 15px;}
+.sub2-me-list-ul2 dd > label{font-size:14px;color:#666666;padding:0 0 0 8px;letter-spacing:-1px;}*/
+
+.sub2-me-list-ul2 li,
+.sub2-me-list-ul2 li:nth-child(3),
+.sub2-me-list-ul2 li:nth-child(4){float:none;display:block;width:auto !important;border-left: 0;}
+.sub2-me-list-ul2 dt{display:block;}
+.sub2-me-list-ul1 > li{margin-bottom:20px;border: 1px solid #c6cad2;background: #f6f9ff;}
+.sub2-me-list-ul2 dd{height:auto;}
+.sub2-me-list-ul2 dd > span{height:auto;display:block;width:auto;}
+.xx-view{border-top: 1px solid #c6cad2;}
+
+
+.ns0407-box2 > ul{margin:0;}
+.ns0407-box2 > ul > li{float:none;margin:0;margin-top: 10px;display: block;width: auto;}
+
+
+/* 20210407 */
+
+/* sub2_4_2 나에게 맞는 경제교육 어린이*/
+.sm2-no1-pad{padding:20px 5px 20px 5px;position:relative;}
+.sm2-no1-pad > ul > li.sm2-no1-li1{position:absolute;top:50%;left:5px;margin:-40px 0 0 0;}
+.sm2-no1-pad > ul > li.sm2-no1-li3{padding:0 0 0 ;float:right;width:calc(100% - 90px);}
+
+
+/* sub2_4_2 나에게 맞는 경제교육 어린이*/
+.sub2-me2-no4 .sub2-04-tabl2{display:none;}
+
+.sub2-me2-no4 ul.s2m2-4ul{display:block;}
+.sub2-me2-no4 ul.s2m2-4ul > li{border:1px solid #e1e1e1;border-top:0;display:table;width:calc(100% - 2px);}
+.sub2-me2-no4 ul.s2m2-4ul > li.s2m2-4ul-li1{border-top:2px solid #545454;}
+.sub2-me2-no4 ul.s2m2-4ul > li > p{width:30%;display:table-cell;text-align:center;color:#545454;padding:10px 2px;}
+.sub2-me2-no4 ul.s2m2-4ul > li > div{width:70%;display:table-cell;border-left:1px solid #e1e1e1;padding:10px 0 10px 10px;}
+.sub2-me2-no4 ul.s2m2-4ul > li > div > p{display:inline-block;padding:0 5px 0 0;}
+.sub2-me2-no4 ul.s2m2-4ul > li > div > p > span{word-break:break-all;word-wrap: break-word;display:block;padding:5px 0 10px 0;color:#2f74ab;}
+.sub2-me2-no4 .sub-ul-dot1{text-align:left;}
+.sub2-me2-no4 .sub-ul-dot1 li{padding:5px 5px 5px 13px;background:url(https://www.econedu.go.kr/img/ots/EE-11000/economic2_01.gif) no-repeat left 12px;}
+
+
+/* sub2_4_7 나에게 맞는 경제교육 다문화가정*/
+.sub2-me2-no5{  width: calc(100% - 2px); border: 1px solid #d2d2d2; background: #fff; position: relative; padding: 10px 0 20px 0;}
+.sub2-m2n5-con{width: auto;border:0;background:#fff;}
+.sub2-m2n5-ctop{padding:0 18px 0 18px;}
+.sub2-m2n5-ctlt{float:none;}
+.sub2-m2n5-ctlt p{color:#938a90;letter-spacing:-1px;}
+.sub2-m2n5-ctlt p span{color:#e2412c;}
+.sub2-m2n5-ctlt p.sub2-m2n5-ctlt-p1{font-size:13px;padding:10px 0 3px 0 ;}
+.sub2-m2n5-ctlt p.sub2-m2n5-ctlt-p2{font-size:12px;letter-spacing:-1.2px;}
+.sub2-m2n5-ctrt{float:none;text-align:right;padding:15px 0 0 0;}
+
+
+.sub2-m2n5-cbtm{padding:15px 18px 20px 18px;}
+.sub2-m2n5-cblf{float:left;padding:0 0 10px 0;}
+.sub2-m2n5-cblf p{display:inline-block;vertical-align:middle;}
+.sub2-m2n5-cblf > p > span.sub2-m2n5-cblf-s1{font-size:18px;color:#3f8cc2;font-weight:bold;line-height:16px;display:inline-block;text-align:center;}
+.sub2-m2n5-cblf > p > span.sub2-m2n5-cblf-s1 span{font-size:11px;color:#bbbcbc;letter-spacing:-1px;line-height:12px;}
+.sub2-m2n5-cblf p.sub2-m2n5-cblf-p2{color:#2d2d2d;font-size:22px;padding:0 30px 0 0;background:url(https://www.econedu.go.kr/img/ots/EE-21000/24700_06_2.jpg) no-repeat right ;}
+.sub2-m2n5-cblt{float:right;padding:3px 0 0 0;}
+.sub2-m2n5-cblt img{padding:0 0 0 5px;}
+
+.sub2-m2n5-but{text-align:center;padding:0;padding:20px 0 0 0;margin:0 18px;border-top:1px solid #d4d4d4;}
+.sub-con-top.s2-247-line-h{line-height:24px;}
+
+.sub2-me2-no6 > ul{text-align:center;}
+.sub2-me2-no6 > ul > li{float:none;padding:0 10px 0 10px;min-width:133px;display:inline-block;}
+.sub2-me2-no6 > ul > li > a{display:block;margin-bottom:25px;}
+.sub2-me2-no6 > ul > li > a > img{width:100%;}
+.sub2-me2-no6 > ul > li > a > span{display:block;text-align:center;padding:10px 0 0 0;font-size:16px; color:#333333;}
+
+
+/* sub2_4_8 나에게 맞는 경제교육 북한이탈주민*/
+.sub2-me2-no7 > ul > li{width:calc(100% - 2px);background:#f6f9ff;border:1px solid #d4d4d4;margin-bottom:30px;}
+.sub2-me2-no7 > ul > li.sub2-m2-n7-li1{float:none;}
+.sub2-me2-no7 > ul > li.sub2-m2-n7-li2{float:none;}
+.sub2-me2-no7 > ul > li.sub2-m2-n7-li3{float:none;}
+.sub2-me2-no7 > ul > li.sub2-m2-n7-li4{float:none;margin:0}
+.sub2-me2-no7 > ul > li > div{padding:20px; }
+.sub2-me2-no7 > ul > li > div > p.sub2-m2-n7c-p1 img{width:100%;}
+.sub2-me2-no7 > ul > li > div > p.sub2-m2-n7c-p2{font-size:18px;color:#333333;font-weight:bold;padding:20px 0;line-height:22px;}
+.sub2-me2-no7 > ul > li > div > p.sub2-m2-n7c-p3{height:auto;font-size:14px;color:#666666;}
+.sub2-me2-no7 > ul > li > div > p.sub2-m2-n7c-p4{text-align:center;padding:30px 0 0 0;}
+
+
+
+
+/* sub5_2 경제교육의 필요성*/
+.sub5-need-no1 .sub5-nno1-01 div{padding:20px 10px;}
+
+.sub5-need-no1 .sub5-nno1-bul > li{width:100%;text-align:center;margin:0 0 30px 0;float:none;}
+.sub5-need-no1 .sub5-nno1-bul > li > h3{width:100%;height:60px;line-height:60px;font-size:18px;color:#fff;font-weight:bold;}
+.sub5-need-no1 .sub5-nno1-bul > li > div.economic1-img{border:1px solid #cecece;border-top:0;width:auto;padding:40px 0;}
+.sub5-need-no1 .sub5-nno1-bul > li > div.economic1-txt ul{height:auto;}
+
+.sub5-need-no2{padding:20px 10px;}
+
+/* ==18-03-08 은퇴준비하기 팝업==*/
+.new3-ppu {width:100%;}
+.new3-ppu-mc {padding: 45px 4% 47px 4%;}
+.nw3-mc-ul li { float: none;width: 100%;background: none;}
+.nw3-mc-ul li.nw3-mc-li1{background: none;width: 100%;}
+.nw3-mc-c {padding: 0 0 30px 0;width: 100%;margin:0 0 40px 0;background: url(https://www.econedu.go.kr/img/ots/EE-18000/new3p_img03.gif) repeat-x bottom;}
+.nw3-mc-ul li.nw3-mc-li3 .nw3-mc-c {margin:0;}
+.nw3-mc-t h3 {font-size:32px;}
+.nw3-mc-t h3 br {display:none;}
+.nw3-mc-t {height: auto;}
+.nw3-mc-t p {width:50%;min-height:195px;}
+.nw3-mc-t p br{display:none;}
+.nw3-mc-t p span br{display:block;}
+.nw3-mc-tp2 {padding-top: 30px;}
+.nw3-mc-tp3 {padding-top: 30px;}
+.nw3-mc-bimg {position:absolute;right:30px;top:15px;}
+.nw3-mc-bimg img{width:80%;}
+.nw3-mc-b {width:50%;}
+.nw3-sc-bc {height:auto;}
+
+.nw3-sc-t {width: auto;height: auto;display:inline-block;}
+.nw3-sc-t h3{padding:12px 35px 12px 27px;}
+.nw3-sc-t h3 br{display:none;}
+.nw3-sc-b {padding: 0 20px;margin-top: 20px; }
+.nw3-sc-tab {float: none;margin-left:1px;margin:0 0 15px 0;}
+.nw3-sc-tab > ul > li {width: calc(28% + 1px);}
+.nw3-sc-tab > ul > li.nw3-tab-li1{width: calc(16% + 1px);}
+.nw3-sc-tab > ul > li > a > span {display: block;height: 49px;line-height: 18px;border: 1px solid #dadada;border-bottom: 1px solid #dadada;;}
+.nw3-sc-tab > ul > li > a > span > span {padding:8px 5px 0 5px;}
+.nw3-sc-tab > ul > li > a > span > span br{display:none;}
+.nw3-sc-bc-st img{width:100%;}
+#scroll-view {position: absolute;top: -199px;right: -3px;}
+
+/* //==//18-03-08 은퇴준비하기 팝업==*/
+
+
+
+
+
+@media screen and (max-width:758px) {
+/* sub1_2 동영상 보기*/
+
+.sub1-video-list{width:568px;margin:36px auto 0 auto;}
+.sub1-video-list > ul > li{width:173px;height:192px;margin:0 8px;display:inline-block;float:left;overflow:hidden;}
+
+/* sub2_3_1 자동차구매플랜 안내*/
+.sub-con-top > ul { padding: 0 10px 0 10px;}
+
+/* ==18-03-08 은퇴준비하기 팝업==*/
+.new3-tit {width: 100%; height: 59px;line-height: 59px;}
+.new3-tit h2 {font-size: 24px; margin-left: 15px;}
+
+.new3-ppu-mc {padding: 30px 2% 35px 2%;}
+.nw3-mc-ul li { float: none;width: 100%;background: none;}
+.nw3-mc-ul li.nw3-mc-li1{background: none;width: 100%;}
+.nw3-mc-c {padding: 0 0 30px 0;width: 100%;margin:0 0 30px 0;background: url(https://www.econedu.go.kr/img/ots/EE-18000/new3p_img03.gif) repeat-x bottom;}
+.nw3-mc-t h3 {font-size:28px;}
+.nw3-mc-t p {width:100%;min-height:50px;}
+.nw3-mc-tp1 {padding-top: 20px;}
+.nw3-mc-tp2 {padding-top: 20px;}
+.nw3-mc-tp3 {padding-top: 20px;}
+.nw3-sc-b {padding: 0 4%;}
+.nw3-mc-bimg {position:static;margin-top:15px}
+.nw3-mc-bimg img{width:100%;max-width:266px;}
+.nw3-mc-b {width:100%;margin-top:20px;}
+
+.nw3-sc-tab {float: none;margin-left:1px;}
+.nw3-sc-tab > ul > li {width: calc(50% + 1px);text-align:center;}
+.nw3-sc-tab > ul > li.nw3-tab-li1{width: calc(50% + 1px);}
+.nw3-sc-tab > ul > li > a.on,
+.nw3-sc-tab > ul > li > a:hover{height:auto;border-top:3px solid #dadada;margin-top:0;}
+.nw3-sc-tab > ul > li > a.on > span,
+.nw3-sc-tab > ul > li > a:hover > span{padding-top:0;border-top:0;height:47px;}
+.nw3-sc-tab > ul > li > a.on > span > span,
+.nw3-sc-tab > ul > li > a:hover > span > span{padding-top:6px;}
+.nw3-sc-tab > ul > li > a.on.sub_title_m > span > span,
+.nw3-sc-tab > ul > li > a.sub_title_m:hover > span > span{padding-top:14px;}
+
+.nw3-sc-bc-btn {text-align: center;padding:0;}
+.nw3-sc-bc-btn a {margin: 0 2px;}
+#scroll-view {position: absolute;top: -243px;right: -3px;font-size:24px;}
+
+/* //==//18-03-08 은퇴준비하기 팝업==*/
+
+}
+
+
+@media screen and (max-width:567px) {
+/* sub1_2 동영상 보기*/
+.sub1-video-play iframe{width:100%;height:auto;}
+
+.sub1-video-list{width:367px;margin:36px auto 0 auto;}
+.sub1-video-list > ul > li{width:173px;height:192px;margin:0 5px;display:inline-block;float:left;overflow:hidden;}
+
+}
+
+@media screen and (max-width:375px) {
+/* 네비*/
+
+.navigation {letter-spacing:-0.5px;}
+
+}
+
+
+@media screen and (max-width:366px) {
+/* sub1_2 동영상 보기*/
+
+.sub1-video-list{width:190px;margin:36px auto 0 auto;}
+.sub1-video-list > ul > li{width:173px;height:192px;margin:0 8px;display:inline-block;float:left;overflow:hidden;}
+
+}
+
+/* 17-10-20 */
+.ee18000-bg{background-size: 100% 100%;height: 100%;}
+.ee18000-txt{padding-top: 5%;}
+.ee18000-txt img{width: 90%;max-width: 517px;}
+.ee18000-bg-btn a{line-height: 5vw;height: 50%;font-size: 3vw; width: 40%;}
+.ee18000-pbg{width: 96%;padding: 10px 2%;margin-left: 0;left: 0;top: 26px;}
+.quiz-4{background: none;}
+.quiz-4 li{margin: 0 5%;}
+
+.ep1-quiz-btm-left{display:none;}
+.quiz-con{width: calc(100% - 40px);padding: 40px 20px 60px;}
+.quiz2-title{font-size:18px;}
+
+.quiz-con-t { width: 100%;}
+.quiz-con-b {padding: 0 20px;margin:0 auto;max-width:350px;}
+.quiz-con-b img{display:none;width:100%;position:relative;left:0;top:0;}
+
+.quiz-con.quiz-bg1{background: #fff4c8;}
+.quiz-con.quiz-bg2{background: #e1edce;}
+.quiz-con.quiz-bg3{background: #e1eaf2;}
+
+
+
+
+@media screen and (max-width:640px) {
+	.quiz-top{background-size: auto 100%;}
+	.quiz-top-left li{float: none;margin-left: 0;}
+	.col-count p{display: none;}
+	.ee18000-pbg-btn > li:first-child a{display:none;}
+	.ee-18000-2-box > .eazy{top: -22px;}
+	.ee-18000-2-box > .hard{top: -22px;}
+	.ee-18000-2 > ul > li dd h3{margin-bottom: 30px;}
+	.quiz2-con{width: 60%;}
+}
+@media screen and (max-width:600px) {
+	.quiz-4{margin-top: 5%;}
+	.quiz-4 li{margin: 0 2%;}
+}
+@media screen and (max-width:530px) {
+	.quiz-4{width: 100%;margin: 5% auto;}
+	.quiz-4 li{display: block;float: left;width: 46%;box-sizing: border-box;}
+	.quiz-4 li input[type="image"]{width: 100%;}
+}
+@media screen and (max-width:530px) {
+	.ee18000-pbg-btn{position: absolute;top: -36px;right: 0;}
+}
+/* 17-10-20 */
+
+
+@media screen and (max-width:758px) {
+/* sub1_2 동영상 보기*/
+
+.sub1-video-list{width:568px;margin:36px auto 0 auto;}
+.sub1-video-list > ul > li{width:173px;height:192px;margin:0 8px;display:inline-block;float:left;overflow:hidden;}
+
+/* sub2_3_1 자동차구매플랜 안내*/
+.sub-con-top > ul { padding: 0 10px 0 10px;}
+
+}
+
+
+@media screen and (max-width:567px) {
+/* sub1_2 동영상 보기*/
+.sub1-video-play iframe{width:100%;height:auto;}
+
+.sub1-video-list{width:367px;margin:36px auto 0 auto;}
+.sub1-video-list > ul > li{width:173px;height:192px;margin:0 5px;display:inline-block;float:left;overflow:hidden;}
+
+}
+
+@media screen and (max-width:375px) {
+/* 네비*/
+
+.navigation {letter-spacing:-0.5px;}
+
+}
+
+
+@media screen and (max-width:366px) {
+/* sub1_2 동영상 보기*/
+
+.sub1-video-list{width:190px;margin:36px auto 0 auto;}
+.sub1-video-list > ul > li{width:173px;height:192px;margin:0 8px;display:inline-block;float:left;overflow:hidden;}
+
+}

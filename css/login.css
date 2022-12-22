@@ -1,0 +1,12 @@
+ ul{list-style: none;}
+h1{text-align: center; font-size: 18px; color: rgb(246, 157, 157);}
+fieldset{width: 500px; border: 5px solid #eee; 
+    margin: 50px auto; padding: 30px; box-sizing: border-box;}
+legend{display: none;}
+li{height: 40px; border-bottom: 1px solid #ddd;line-height: 40px;}
+.w{width: 120px;display: block; float: left;}
+input{border: 1px solid #ccc; padding: 3px;}
+#submit{border: none; background: rgb(248, 170, 170); color: #fff; padding: 10px 20px;}
+span{display: inline-block; margin-left: 20px; font-size: 12px;}
+li:last-child{padding-top: 30px; border: none; text-align: center;}
+strong{font-weight: normal;} 

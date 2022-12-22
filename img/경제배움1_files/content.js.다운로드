@@ -1,0 +1,250 @@
+/* ////////////////////////////////////////////////////////////////////////////////////////////
+
+	CMS menu
+
+//////////////////////////////////////////////////////////////////////////////////////////// */
+$(document).ready(function(){
+	// cms_menu_ac();
+});
+
+function cms_menu_ac(code){
+	var me = $(".cms #remote .js_menu > ul");
+		me.li = me.find(">li");
+		me.li.a = me.li.find(">a");
+		me.li.ul = me.li.find(">ul");
+		me.li.ul.li = me.li.ul.find(">li");
+		me.li.ul.li.a = me.li.ul.li.find(">a");
+		
+
+	function setting_AC() {
+		if (code.indexOf("0000000") != -1 || code == '') {
+			return false;
+		} else {
+			me.find(" li." + code).find("a").addClass("on");
+			me.find(" li." + code).parents("ul").slideDown(300);
+			me.find(" li." + code).parents("ul").siblings("a").addClass("on");
+		}
+	} 
+	setting_AC();
+
+	function updown(obj,str){
+		var ul = obj.siblings("ul");
+		var _li = obj;
+		if(ul.size() != 0){
+			if(ul.is(":hidden")){
+				str.removeClass("on");
+				str.siblings("ul").slideUp(300);
+				ul.slideDown(300);
+				_li.addClass("on");
+			} else {
+				ul.slideUp(300,function(){
+					str.removeClass("on");
+				});
+			}
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	me.li.a.click(function(){
+		updown($(this),me.li.a);
+	});
+
+	me.li.ul.li.a.click(function(){
+		updown($(this),me.li.ul.li.a);
+	});
+}
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////
+
+	CMS Content : 메뉴관리
+
+//////////////////////////////////////////////////////////////////////////////////////////// */
+$(document).ready(function(){
+	if($(".menu_add_group").size() != 0){
+		cms_content_menu_ac();
+		$(window).scroll(function(){
+			cms_content_menu_ac();
+		});
+		$(window).resize(function(){
+			cms_content_menu_ac();
+		});
+	}
+});
+
+function cms_content_menu_ac(){
+	var obj = $(".menu_add_group");
+		obj.t = obj.position().top;
+		obj.scroll_top = $(window).scrollTop();
+		obj.head = obj.find(" .menu_add_control");
+
+		obj.addBox = $(".menu_add_box");
+	
+	if(obj.t <= obj.scroll_top){
+		obj.head.css("top",(obj.scroll_top-obj.t)+"px");
+		obj.addBox.css("top",(obj.scroll_top-obj.t)+"px");
+	} else {
+		if(obj.head.attr("style")){
+			obj.head.removeAttr("style");
+			obj.addBox.removeAttr("style");
+		}
+	}
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////
+
+	CMS board : 등록
+
+//////////////////////////////////////////////////////////////////////////////////////////// */
+$(document).ready(function(){
+	if($(".board_tie_box").size() != 0){
+		board_tie_box_AC();
+	}
+});
+function board_tie_box_AC(str){
+	var obj = $(".board_tie_box");
+		obj.lbox = obj.find(" .l_left");
+		obj.rbox = obj.find(" .l_right");
+		obj.rbtn = obj.find(" .l_center > .btn:eq(0)");
+		obj.lbtn = obj.find(" .l_center > .btn:eq(1)");
+		obj.li = obj.find(" ul > li");
+		
+
+	//초기화
+	function def(){
+		obj.lbox.find(" ul > li").unbind("click").bind("click",function(){
+			obj.rbox.find(" ul > li").removeClass("on");
+		});
+		obj.rbox.find(" ul > li").unbind("click").bind("click",function(){
+			obj.lbox.find(" ul > li").removeClass("on");
+		});
+		obj.lbox.find(" ul > li input:checkbox").prop("checked",true);
+		obj.rbox.find(" ul > li input:checkbox").prop("checked",false);
+
+		//활성화
+		obj.li.unbind("click").bind("click",function(){
+			if(!$(this).hasClass("on")){
+				$(this).addClass("on");
+			} else {
+				$(this).removeClass("on");
+			}
+		});
+	}
+	def();
+	
+	
+
+	//이동
+	obj.rbtn.unbind("click").bind("click",function(){
+		var on = obj.lbox.find(" ul > li.on");
+		if(on.size() == 0) return false;
+
+		on.removeClass("on").appendTo(obj.rbox.find(" ul"));
+		obj.rbox.find(" ul > li input:checkbox").prop("checked",false);
+
+		def();
+		return false;
+	});
+
+	obj.lbtn.unbind("click").bind("click",function(){
+		var on = obj.rbox.find(" ul > li.on");
+		if(on.size() == 0) return false;
+
+		on.removeClass("on").appendTo(obj.lbox.find(" ul"));
+		obj.lbox.find(" ul > li input:checkbox").prop("checked",true);
+
+		def();
+		return false;
+	});
+}
+
+
+function getCalendarAjax(){
+	console.log("getCalendarAjax");
+	var request = {
+		item : 'item'	
+	};
+	
+	$.ajax({
+		type: 'post',
+		url : '/mec/ots/getCalendarAjax.do?tplSer=62&yy=2020&mm=12&mnuBaseId=MNU0000148&catCd=',
+		//contentType : 'application/json;charset=UTF-8',
+		//data : JSON.stringify(request),
+		dataType : 'json',
+		//data : request,
+		async: false,     //동기 비동기 설정
+		success : function(response){
+			//alert(response);
+			console.log("185:"+ response.length);
+			var dataObject = JSON.stringify(response);
+			console.log( dataObject);
+			console.log( "188:"+ dataObject.length);
+			var aJson = JSON.parse(dataObject);
+			//var aJson2 = JSON.stringify( aJson );
+			//console.log( aJson2.length);
+			
+			$.each( aJson, function(key, value){
+				var htmlTxt = "";
+				//console.log(192);
+				console.log( key);
+				console.log( value.id);
+				console.log( value.day);
+				htmlTxt = '<div class=\"e40_day\">';
+				if( key%7 == 0 ){
+					htmlTxt += '<span class=\"sn_txt\">'+value.day+'</span>';
+				}else if( key%7 == 6){
+					htmlTxt += '<span class=\"st_txt\">'+value.day+'</span>';
+				}else {
+					htmlTxt += '<span >'+value.day+'</span>';
+				} 
+				
+				if( value.CAT != undefined){
+					
+					for( var k in value.CAT){
+						console.log('k:'+ k[0] + ' v:' + value.CAT[k[0]].CAT_CD);
+						console.log('k:'+ k[0] + ' v:' + value.CAT[k[0]].CAT_NAME);
+						console.log('k:'+ k[0] + ' v:' + value.CAT[k[0]].CAT_TITLE);
+					}
+				}
+				htmlTxt += '</div>';
+				
+				$('#cal_'+key).html(htmlTxt);
+				
+			});
+			/*
+			for( var key in aJson){
+				//var obj = JSON.stringify(key);
+				console.log('key:'+ key[0] + ' value:' + aJson[key[0]].name);
+			}
+			*/
+			
+			
+			
+			
+		},
+		error : function(jqXHR, textStatus, errorThown){
+			//alert(jqXHR);
+			alert(textStatus);
+			alert(errorThown);
+		}
+	});
+}
+
+
+
+
+
+
+
+
+
+
+
+

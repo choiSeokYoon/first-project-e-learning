@@ -1,0 +1,751 @@
+<!DOCTYPE HTML>
+<html lang='ko'>
+<head>
+	<title> 경제배움e</title>
+	<meta charset='utf-8'>
+	<meta name='Viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.6'>
+	<meta name='Title' content='경제배움e'>
+	<meta name='Subject' content='경제배움e 클론 코딩'>
+	<meta name='Keywords' content='html5, css3, 웹표준, 경제배움e'>
+	<meta name='Author' content='seok yun'>
+	<meta name='Publisher' content='seok yun'>
+	<meta name='Description' content='웹접근성, 웹표준을 준수한 경제배움 클론 코딩'>
+	<meta name='Author-Date' content='2022/10/28'>
+	<meta name='Copyright' content=''>
+	<meta name='Robots' content='index,follow'>
+	
+	<link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet">
+	<link href="https://webfontworld.github.io/SCoreDream/SCoreDream.css" rel="stylesheet">
+	<link rel='stylesheet' type="text/css" href='css/reset.css'>
+	<link rel='stylesheet' type="text/css" href='css/style2.css'>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<script src="./js/script.js" defer></script>
+    <script src="./javascript.js" defer></script>
+	<script src="https://kit.fontawesome.com/def66b134a.js" crossorigin="anonymous"></script>
+	
+	
+	
+	
+
+	<link rel='stylesheet' type="text/css" href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=9347269aa916e3e756c869745a751454"></script>
+
+
+
+
+</head>
+	<body>
+		<ul id="skip">
+			<li><a href="#header">헤더 바로가기</a></li>
+			<li><a href="#nav">메뉴 바로가기</a></li>
+			<li><a href="#content">내용 바로가기</a></li>
+		</ul>
+		<div id="wrap">
+			<div class="main-black-bg">
+				<div class="sign-up-page">
+					<ul class="sign-up-slide">
+						<li class="sign-up-agree">
+							<div class="agree-box">
+								<h3 class="ir_so">회원 약관</h3>
+								<h3>경제배움e 회원 약관(필수) <br>
+								스크롤를 꼭 내려주세요</h3>
+								<div class="agree-info">
+									개인정보보호법에 따라 네이버에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
+
+									1. 수집하는 개인정보
+									이용자는 회원가입을 하지 않아도 정보 검색, 뉴스 보기 등 대부분의 네이버 서비스를 회원과 동일하게 이용할 수 있습니다. 이용자가 메일, 캘린더, 카페, 블로그 등과 같이 개인화 혹은 회원제 서비스를 이용하기 위해 회원가입을 할 경우, 네이버는 서비스 이용을 위해 필요한 최소한의 개인정보를 수집합니다.
+
+									회원가입 시점에 네이버가 이용자로부터 수집하는 개인정보는 아래와 같습니다.
+									- 회원 가입 시 필수항목으로 아이디, 비밀번호, 이름, 생년월일, 성별, 휴대전화번호를, 선택항목으로 본인확인 이메일주소를 수집합니다.
+									단, 비밀번호 없이 회원 가입 시에는 필수항목으로 아이디, 이름, 생년월일, 휴대전화번호를, 선택항목으로 비밀번호를 수집합니다.
+									만약 이용자가 입력하는 생년월일이 만14세 미만 아동일 경우에는 법정대리인 정보(법정대리인의 이름, 생년월일, 성별, 중복가입확인정보(DI), 휴대전화번호)를 추가로 수집합니다.
+									- 단체아이디로 회원가입 시 단체아이디, 비밀번호, 단체이름, 이메일주소, 휴대전화번호를 필수항목으로 수집합니다. 그리고 단체 대표자명을 선택항목으로 수집합니다.
+									서비스 이용 과정에서 이용자로부터 수집하는 개인정보는 아래와 같습니다.
+									- 회원정보 또는 개별 서비스에서 프로필 정보(별명, 프로필 사진)를 설정할 수 있습니다. 회원정보에 별명을 입력하지 않은 경우에는 마스킹 처리된 아이디가 별명으로 자동 입력됩니다.
+
+									- 네이버 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정에서 해당 서비스의 이용자에 한해 추가 개인정보 수집이 발생할 수 있습니다. 추가로 개인정보를 수집할 경우에는 해당 개인정보 수집 시점에서 이용자에게 ‘수집하는 개인정보 항목, 개인정보의 수집 및 이용목적, 개인정보의 보관기간’에 대해 안내 드리고 동의를 받습니다.
+
+									서비스 이용 과정에서 IP 주소, 쿠키, 서비스 이용 기록, 기기정보, 위치정보가 생성되어 수집될 수 있습니다. 또한 이미지 및 음성을 이용한 검색 서비스 등에서 이미지나 음성이 수집될 수 있습니다.
+									구체적으로 1) 서비스 이용 과정에서 이용자에 관한 정보를 자동화된 방법으로 생성하여 이를 저장(수집)하거나,
+									2) 이용자 기기의 고유한 정보를 원래의 값을 확인하지 못 하도록 안전하게 변환하여 수집합니다. 서비스 이용 과정에서 위치정보가 수집될 수 있으며,
+									네이버에서 제공하는 위치기반 서비스에 대해서는 '네이버 위치기반서비스 이용약관'에서 자세하게 규정하고 있습니다.
+									이와 같이 수집된 정보는 개인정보와의 연계 여부 등에 따라 개인정보에 해당할 수 있고, 개인정보에 해당하지 않을 수도 있습니다.
+
+									2. 수집한 개인정보의 이용
+									네이버 및 네이버 관련 제반 서비스(모바일 웹/앱 포함)의 회원관리, 서비스 개발・제공 및 향상, 안전한 인터넷 이용환경 구축 등 아래의 목적으로만 개인정보를 이용합니다.
+
+									- 회원 가입 의사의 확인, 연령 확인 및 법정대리인 동의 진행, 이용자 및 법정대리인의 본인 확인, 이용자 식별, 회원탈퇴 의사의 확인 등 회원관리를 위하여 개인정보를 이용합니다.
+									- 콘텐츠 등 기존 서비스 제공(광고 포함)에 더하여, 인구통계학적 분석, 서비스 방문 및 이용기록의 분석, 개인정보 및 관심에 기반한 이용자간 관계의 형성, 지인 및 관심사 등에 기반한 맞춤형 서비스 제공 등 신규 서비스 요소의 발굴 및 기존 서비스 개선 등을 위하여 개인정보를 이용합니다.
+									- 법령 및 네이버 이용약관을 위반하는 회원에 대한 이용 제한 조치, 부정 이용 행위를 포함하여 서비스의 원활한 운영에 지장을 주는 행위에 대한 방지 및 제재, 계정도용 및 부정거래 방지, 약관 개정 등의 고지사항 전달, 분쟁조정을 위한 기록 보존, 민원처리 등 이용자 보호 및 서비스 운영을 위하여 개인정보를 이용합니다.
+									- 유료 서비스 제공에 따르는 본인인증, 구매 및 요금 결제, 상품 및 서비스의 배송을 위하여 개인정보를 이용합니다.
+									- 이벤트 정보 및 참여기회 제공, 광고성 정보 제공 등 마케팅 및 프로모션 목적으로 개인정보를 이용합니다.
+									- 서비스 이용기록과 접속 빈도 분석, 서비스 이용에 대한 통계, 서비스 분석 및 통계에 따른 맞춤 서비스 제공 및 광고 게재 등에 개인정보를 이용합니다.
+									- 보안, 프라이버시, 안전 측면에서 이용자가 안심하고 이용할 수 있는 서비스 이용환경 구축을 위해 개인정보를 이용합니다.
+									3. 개인정보의 보관기간
+									회사는 원칙적으로 이용자의 개인정보를 회원 탈퇴 시 지체없이 파기하고 있습니다.
+									단, 이용자에게 개인정보 보관기간에 대해 별도의 동의를 얻은 경우, 또는 법령에서 일정 기간 정보보관 의무를 부과하는 경우에는 해당 기간 동안 개인정보를 안전하게 보관합니다.
+
+									이용자에게 개인정보 보관기간에 대해 회원가입 시 또는 서비스 가입 시 동의를 얻은 경우는 아래와 같습니다.
+									- 부정 가입 및 이용 방지
+									부정 이용자의 가입인증 휴대전화번호 또는 DI (만14세 미만의 경우 법정대리인DI) : 탈퇴일로부터 6개월 보관
+									탈퇴한 이용자의 휴대전화번호(복호화가 불가능한 일방향 암호화(해시처리)) : 탈퇴일로부터 6개월 보관
+									- QR코드 복구 요청 대응
+									QR코드 등록 정보:삭제 시점으로부터6개월 보관
+									- 스마트플레이스 분쟁 조정 및 고객문의 대응
+									휴대전화번호:등록/수정/삭제 요청 시로부터 최대1년
+									- 네이버 플러스 멤버십 서비스 혜택 중복 제공 방지
+									암호화처리(해시처리)한DI :혜택 제공 종료일로부터6개월 보관
+									- 지식iN eXpert 재가입 신청 및 부정 이용 방지
+									eXpert 서비스 및 eXpert 센터 가입 등록정보 : 신청일로부터 6개월(등록 거절 시, 거절 의사 표시한 날로부터 30일) 보관
+									전자상거래 등에서의 소비자 보호에 관한 법률, 전자문서 및 전자거래 기본법, 통신비밀보호법 등 법령에서 일정기간 정보의 보관을 규정하는 경우는 아래와 같습니다. 네이버는 이 기간 동안 법령의 규정에 따라 개인정보를 보관하며, 본 정보를 다른 목적으로는 절대 이용하지 않습니다.
+									- 전자상거래 등에서 소비자 보호에 관한 법률
+									계약 또는 청약철회 등에 관한 기록: 5년 보관
+									대금결제 및 재화 등의 공급에 관한 기록: 5년 보관
+									소비자의 불만 또는 분쟁처리에 관한 기록: 3년 보관
+									- 전자문서 및 전자거래 기본법
+									공인전자주소를 통한 전자문서 유통에 관한 기록 : 10년 보관
+									- 전자서명 인증 업무
+									인증서와 인증 업무에 관한 기록: 인증서 효력 상실일로부터 10년 보관
+									- 통신비밀보호법
+									로그인 기록: 3개월
+
+									참고로 네이버는 ‘개인정보 유효기간제’에 따라 1년간 서비스를 이용하지 않은 회원의 개인정보를 별도로 분리 보관하여 관리하고 있습니다.
+
+									4. 개인정보 수집 및 이용 동의를 거부할 권리
+									이용자는 개인정보의 수집 및 이용 동의를 거부할 권리가 있습니다. 회원가입 시 수집하는 최소한의 개인정보, 즉, 필수 항목에 대한 수집 및 이용 동의를 거부하실 경우, 회원가입이 어려울 수 있습니다.
+								</div>
+								<div class="agree-chk">
+									<label for="#" >동의 합니까?</label>
+									<input type="radio" name="agree" id="agreeOk" class="agreeOk12">
+									<label for="#"  >동의 못합니까?</label>
+									<input type="radio" name="agree" id="agreeNo">
+								</div>
+								
+								<input type="submit" name="" id="agree-submit" value="다음" class="agree-submit">
+								
+							</div>
+						</li>
+						<h3 class="ir_so">회원가입 페이지</h3>
+						<li class="sign-up-meber">
+							<h1>회원가입</h1>
+							<fieldset>
+								<legend>회원가입</legend>
+								<form action="result.html" method="post" name="form1">
+									<ul>
+										<li>
+											<label for="id1" class="sign-up-text">아이디 입력</label>
+											<input type="text" name="" required size="30" id="id1" placeholder="아이디를 입력하세요.">
+											<a href="javascript:">중복확인</a>
+										</li>
+										<li><span id="id1Msg"></span></li>
+										<li>
+											<label for="pw1"  class="sign-up-text">비밀번호</label>
+											<input type="password" name="" required size="30" id="pw1" placeholder="비밀번호를 입력하세요.">
+										</li>
+										<li> <span id="pw1Msg"></span></li>
+										<li>
+											<label for="pw2"  class="sign-up-text">비밀번호</label>
+											<input type="password" name="" required size="30" id="pw2"placeholder="비밀번호를 다시 입력하세요.">
+										</li>
+										<li> <span id="pw2Msg"></span></li>
+										<li>
+											<label for="name1"  class="sign-up-text">이름</label>
+											<input type="text" name="" required size="30" id="name1" placeholder="이름을 입력하세요">
+										</li>
+										<li> <span id="name1Msg"></span></li>
+										<li>
+											<strong class="sign-up-text">성별</strong>
+											<label for="#" class="sign-up-gender">남</label>
+											<input type="radio" name="gender" id="m">
+											<label for="#"  >여</label>
+											<input type="radio" name="gender" id="f">
+										</li>
+										<li> <span id="gender1Msg"></span></li>
+										<li>
+											<label for="email1"  class="sign-up-text">이메일</label>
+											<input type="email" name="" required size="30" id="email1" placeholder="이메일을 입력하세요.">
+										</li>
+										<li> <span id="email1Msg"></span></li>
+										<li>
+											<label for="tel1"  class="sign-up-text"> 핸드폰번호</label>
+											<input type="text" name="" required size="30" id="tel1" placeholder="핸드폰번호를 입력하세요.('-'제외)">
+											<li> <span id="tel1Msg"></span></li>
+										</li>
+										<li>
+											<input type="submit" class="blank sign-up-submit" name="" id="submit" value="회원가입">
+											
+										</li>
+									</ul>
+								</form>
+							
+							</fieldset>
+						</li>
+						
+					</ul>
+					
+					<button type="submit" class="modal-close">x</button>
+				</div>
+			</div>
+			<header id="header">
+				<div class="container">
+					<nav id="nav">
+						<div class="logo"><h1><a href="./index2.html"><img src="./img/로고.png" alt=""></a></h1></div>
+						<div class="another_page">
+							<ul>
+								<li><a href="javascript:" title="회원가입" id="sign-Up">회원가입</a></li>
+								<li><a href="#" title="어린이 경제교실">어린이 경제교실</a></li>
+								<li><a href="#" title="기획재정부">기획재정부</a></li>
+								<li><a href="#" title="사이트맵">사이트맵</a></li>
+								
+							</ul>
+						</div>
+						
+						<div class="inner">
+							<div class="bg"></div>
+							<ul>
+								<li><a href="./index3.html" title="경제배움터">경제배움터</a>
+									<div class="width100">
+										<ul>
+											<li><h2><a href="#" title="경제배움터">경제배움터</a></h2><img src="./img/main_depth2_bg01.png" alt="경제배움터 서류와 팬"></li>
+											<li>
+												<h3><a href="#" title="온라인배움터">온라인배움터</a></h3>
+												<ul>
+													<li><a href="./index3.html" title="온라인배움터소개">온라인배움터 소개</a></li>
+													<li><a href="#" title="수강신청">수강신청</a></li>
+													<li><a href="#" title="마이페이지">마이페이지</a></li>
+												</ul>
+											</li>
+											<li>
+												<h3><a href="#" title="시사경제 따라가기">시사&#183;경제 따라가기</a></h3>
+												<ul>
+													<li><a href="#" title="시사경제용어사전">시사&#183;경제용어사전</a></li>
+													<li><a href="#" title="퀴즈로배우는시사경제">퀴즈로배우는시사&#183;경제</a></li>
+													<li><a href="#" title="경제로 세상 읽기">경제로 세상 읽기</a></li>
+												</ul>
+											</li>
+											<li>
+												<h3><a href="#" title="경제생활 체험하기">경제생활 체험하기</a></h3>
+												<ul>
+													<li><a href="#" title="주택 마련하기">주택 마련하기</a></li>
+													<li><a href="#" title="자동차 구입하기">자동차 구입하기</a></li>
+													<li><a href="#" title="은퇴 준비하기">은퇴 준비하기</a></li>
+													<li><a href="#" title="물가 체험하기">물가 체험하기</a></li>
+													<li><a href="#" title="창업 준비하기">창업 준비하기</a></li>
+													<li><a href="#" title="주식 체험하기">주식 체험하기</a></li>
+										
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="./index4.html" title="교육자료 찾기">교육자료 찾기</a>
+									<div class="width100">
+										<ul>
+											<li><h2><a href="" title="교육자료 찾기">교육자료 찾기</a></h2><img src="./img/main_depth2_bg03.png" alt="교육자료찾기 서류와 돋보기"></li>
+											<li>
+												<h3><a href="#" title="나를 위한 교육행사 찾기">나를 위한 교육행사 찾기</a></h3>
+											</li>
+											<li>
+												<h3><a href="#" title="유형별 교육자료"> 유형별 교육자료</a></h3>
+												<ul>
+													<li><a href="./index4.html" title="도서(단행본/시리즈물)">도서(단행본/시리즈물)</a></li>
+													<li><a href="#" title="퀴즈로배우는시사경제">영상/애니메이션</a></li>
+													<li><a href="#" title="웹툰/만화">웹툰/만화</a></li>
+													<li><a href="#" title="카드뉴스">카드뉴스</a></li>
+													<li><a href="#" title="웹진/잡지/신문">웹진/잡지/신문</a></li>
+													<li><a href="#" title="기타">기타</a></li>
+												</ul>
+											</li>
+											<li>
+												<h3><a href="#" title="생애주기별교육자료">생애주기별교육자료</a></h3>
+												<ul>
+													<li><a href="#" title="생애주기별 교육자료 소개">생애주기별 교육자료 소개</a></li>
+													<li><a href="#" title="아동기의교육자료">아동기의교육자료</a></li>
+													<li><a href="#" title="청소년기의교육자료">청소년기의교육자료</a></li>
+													<li><a href="#" title="장년기의교육자료">장년기의교육자료</a></li>
+													<li><a href="#" title="노년기의교육자료">노년기의교육자료</a></li>
+												</ul>
+											</li>
+											<li>
+												<h3><a href="#" title="생애주기별교육자료">교육과정별 교육자료</a></h3>
+												<ul>
+													<li><a href="#" title="생애주기별 교육자료 소개">전체 교육자료</a></li>
+													<li><a href="#" title="아동기의교육자료">초등학생 교육자료</a></li>
+													<li><a href="#" title="청소년기의교육자료">중학생 교육자료</a></li>
+													<li><a href="#" title="장년기의교육자료">고등학생 교육자료</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="./index5.html" title="교육정보 안내">교육정보 안내</a>
+									<div class="width100">
+										<ul>
+											<li><h2><a href="#" title="교육정보 안내">교육정보 안내</a></h2><img src="./img/main_depth2_bg04.png" alt="컴퓨터"></li>
+											<li>
+												<h3><a href="#" title="나를 위한 교육행사 찾기">나를 위한 교육행사 찾기</a></h3>
+												
+											</li>
+											<li>
+												<h3><a href="#" title="경제교육기관 및 단체">경제교육기관 및 단체</a></h3>
+												<ul>
+													<li><a href="./index5.html" title="경제교육기관 및 단체">경제교육기관 및 단체</a></li>
+													<li><a href="#" title="경제교육 사이트 모음">경제교육 사이트 모음</a></li>
+													<li><a href="#" title="교육행사 일정">교육행사 일정</a></li>
+												</ul>
+											</li>
+											<li>
+												<h3><a href="#" title="경제생활 체험하기">지역경제교육센터</a></h3>
+												<ul class="left">
+													<li><a href="#" title="서울&#183;인천">서울&#183;인천</a></li>
+													<li><a href="#" title="경기">경기</a></li>
+													<li><a href="#" title="부산">부산</a></li>
+													<li><a href="#" title="광주">광주</a></li>
+													<li><a href="#" title="대구">대구</a></li>
+													<li><a href="#" title="대전/세종">대전&#183;세종</a></li>
+													<li><a href="#" title="울산">울산</a></li>
+													<li><a href="#" title="충남">충남</a></li>
+												</ul>
+												<ul class="right">
+													<li><a href="#" title="충북">충북</a></li>
+													<li><a href="#" title="전남">전남</a></li>
+													<li><a href="#" title="전북">전북</a></li>
+													<li><a href="#" title="경남">경남</a></li>
+													<li><a href="#" title="경북">경북</a></li>
+													<li><a href="#" title="강원">강원</a></li>
+													<li><a href="#" title="제주">제주</a></li>
+												</ul>
+											</li>
+											<li>
+												<h3><a href="#" title="지역경제교육센터 교육정보">지역경제교육센터 교육정보</a></h3>
+												<ul>
+													<li><a href="#" title="교육정보안내">교육정보안내</a></li>
+													<li><a href="#" title="지역경제교육센터 일정">지역경제교육센터 일정</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="./index6.html" title="경제배움e 소개">경제배움e 소개</a>
+									<div class="width100">
+										<ul>
+											<li><h2><a href="#" title="경제배움e 소개">경제배움e 소개</a></h2><img src="./img/main_depth2_bg05.png" alt="전구"></li>
+											<li>
+												<h3><a href="#" title="온라인배움터">경제배움e이용하기</a></h3>
+												<ul>
+													<li><a href="./index6.html" title="경제배움e란?">경제배움e란?</a></li>
+													<li><a href="#" title="수강신청">공지사항</a></li>
+													<li><a href="#" title="마이페이지">건의사항</a></li>
+													<li><a href="#" title="마이페이지">자주 묻는 질문</a></li>
+													<li><a href="#" title="마이페이지">뉴스레터 신청</a></li>
+													<li><a href="#" title="마이페이지">이전 뉴스레터 보기</a></li>
+													<li><a href="#" title="마이페이지">이벤트</a></li>
+												</ul>
+											</li>
+											<li>
+												<h3><a href="#" title="경제교육 이해하기">경제교육 이해하기</a></h3>
+												<ul>
+													<li><a href="#" title="경제교육,왜 필요할까?">경제교육,왜 필요할까?</a></li>
+													<li><a href="#" title="세대별 경제교육의 특징">세대별 경제교육의 특징</a></li>
+													<li><a href="#" title="아동기">아동기</a></li>
+													<li><a href="#" title="청소년기">청소년기</a></li>
+													<li><a href="#" title="청년기">청년기</a></li>
+													<li><a href="#" title="장년기">장년기</a></li>
+													<li><a href="#" title="노년기">노년기</a></li>
+												</ul>
+											</li>
+											
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="search"><a href="#"><img src="./img/search_img01.gif" alt=""></a></div>
+					</nav>
+				</div>
+			</header>
+			<main id="content">
+				<div class="main_cont1-1">
+					<div class="container">
+						<div class="main-banner">
+							<div class="main-top">
+								<div class="main-banner-left">
+									<div class="left-box">
+										<div class="banner-search-box">
+											<h2 class="ir_so">통합검색</h2>
+											<form action="#"method="post" id="searchForm" name="searchForm">
+												<input type="text" id="search_txt" class="main-banner-search"
+												title="원하는 경제 자료를 찾아보세요." placeholder="원하는 경제 자료를 찾아보세요.">
+												<label for="main-banner-search">
+													<a href="#"><img src="./img/search_img02 (1).png" alt="search"></a>
+												</label>
+											</form>
+											</div>
+											<ul class="banner-button">
+												<li><a href="#" title="경제">#경제</a></li>
+												<li><a href="#" title="주택마련하기">#주택마련하기</a></li>
+												<li><a href="#" title="달라진 정책">#달라진 정책</a></li>
+											</ul>
+										
+									</div>
+								</div>
+								<div class="main-banner-right">
+									<div class="banner-right-box">
+										<div class="img-slide">
+											<ul class="main-slide">
+												<li><a href="#"><img src="./img/main_banner_slide1.png" alt="경제로 세상 읽기"></a></li>
+												<li><a href="#"><img src="./img/main_banner_slide2.png" alt="퀴즈로 보는 시사경제"></a></li>
+												<li><a href="#"><img src="./img/main_banner_slide3.png" alt="이런 수업 어때요?"></a></li>
+												<li><a href="#"><img src="./img/main_banner_slide4.jpg" alt="은퇴준비하기"></a></li>												
+											</ul>
+										</div>
+										<div class="slide-count">
+											<span class="counter">1</span>
+											<span>&nbsp;/&nbsp;</span>
+											<span>4</span>
+										</div>
+										<ul>
+											<li><a href="javascript:" class="btnSlidePrev"><img src="./img/banner_swiper_icon_lf.gif" alt="이전버튼"></a></li>
+											<li><a href="javascript:" class="btnSlidepp"><img src="./img/banner_swiper_icon_on.gif" alt="정지 버튼"></a></li>
+											<li><a href="javascript:" class="btnSlideNext"><img src="./img/banner_swiper_icon_rt.gif" alt="다음버튼"></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main_cont1-2">
+					<div class="container">
+						<div class="main-banner-list">
+							<ul>
+								<li><a href="#">
+									<div>
+										<img src="./img/banner_list01.png" alt="나를위한교육자료">
+									</div>	
+									<span>나를 위한 교육자료</span></a></li>
+								<li><a href="#">
+									<div>
+										<img src="./img/banner_list02.png" alt="나를 위한 교육행사">
+									</div>
+									<span>나를 위한 교육행사</span></a></li>
+								<li><a href="#">
+									<div>
+										<img src="./img/banner_list03.png" alt="온라인 배움터">
+									</div>	
+									<span>온라인 배움터</span></a></li>
+								<li><a href="#">
+									<div>
+										<img src="./img/banner_list04.png" alt="시사 경제 용어사전">
+									</div>
+									<span>시사 경제&#183;용어사전</span></a></li>
+							</ul>
+							<div class="main-banner-emailbox">
+								<p class="banner-emailbox-title">
+									경제배움e 뉴스레터
+									<a href="#" title="신청하기">신청하기</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main_cont2">
+					<div class="container2">
+						<h3 class="part1-title">
+							경제배움e의 <span>경제교육 시리즈</span>
+						</h3>
+						<div class="part1-slide">
+							<ul class="part1-slide-box">
+								<li class="slide-box-list cf">
+									
+									<img src="./img/part01.jpg" alt="생애주기별 교육자료">
+									<div class="part1-show-count">
+										<h4 class="part1-show-title">생애주기별 교육자료</h4>
+										<div class="show-title-info">
+											"아동기부터 노년기까지 우리 삶에 필요한"
+											<br>
+											"경제교육, 어떻게 할까요?"
+										</div>
+									</div>
+									
+								</li>
+								<li class="slide-box-list center">
+									<img src="./img/part02.jpg" alt="경제로 세상 읽기">
+								
+									<div class="part1-show-count">
+										<h4 class="part1-show-title">경제로 세상 읽기</h4>
+										<div class="show-title-info">
+											현실 속 경제 사례로 풀어보는 교과서 경제 개념
+											
+									</div>
+								</li>
+								<li class="slide-box-list">
+									<img src="./img/part03.jpg" alt="교육자료">
+									<div class="part1-show-count">
+										<h4 class="part1-show-title">교육과정별 교육자료</h4>
+										<div class="show-title-info">
+										"다른 선생님들은 학교에서 어떻게 경제 수업을"
+										<br>
+										"하는지 궁금하다면?"
+									</div>
+								</li>
+								<li class="slide-box-list">
+									<img src="./img/part04.jpg" alt="경제 가리치기">
+								
+									<div class="part1-show-count">
+										<h4 class="part1-show-title">'잘' 알고 '잘' 가르치는법</h4>
+										<div class="show-title-info">
+											"경제학 지식/교슈설계/강사 소양까지 !"
+											<br>
+											"강사의 역량 강화를 위한 모든 것"
+									</div>
+								</li>
+								
+							</ul>
+							<div class="part1-slide-btn">
+								<div class="part1-btn-prev">
+									<a href="javascript:"><img src="./img/mian_part01_prev.gif" alt="이전버튼"></a>
+								</div>
+								<div class="part1-btn-next">
+									<a href="javascript:"><img src="./img/main_part01_next.gif" alt="다음버튼"></a>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="main_cont3">
+					<div class="container">
+						<h3 class="part2-title">
+							우리 지역 <span>경제교육센터</span>에서는?
+						</h3>
+						<div class="part2-box">
+							<div class="part2-left">
+								<h4 class="part2-left-title"><span>4개</span> 교육 진행중</h4>
+								<div class="part2-left-title-cont">
+									<h5>찾아가는 경제교육!</h5>
+									<p>우리지역경제교육센터가<br>
+										원하는 교육을 원하는 곳에서<br>
+										진행해 드립니다
+									</p>
+								</div>
+								<div class="part2-left-button"><a href="#">교육 모두 보기</a></div>
+								<div class="part2-slide-btn">
+									<div class="part2-slide-prev">
+										<a href="javascript:"><img src="./img/main_part02_prev.jpg" alt="이전버튼"></a>
+									</div>
+									<div class="part2-slide-on">
+										<a href="javascript:"><img src="./img/main_part02_on.jpg" alt="정지/재생 버튼"></a>
+									</div>
+									<div class="part2-slide-next">
+										<a href="javascript:"><img src="./img/main_part02_next.jpg" alt="다음버튼"></a>
+									</div>
+								</div>
+							</div>
+							<div class="part2-right cf">
+								<div class="part2-right-box">
+									<div class="part2-slide-list">
+										<div class="part2-slide-box">
+											<div class="part2-box-header">전북</div>
+											<div class="part2-box-title">초등 방문 4학년 3차시 - 노래로 배우는 절약</div>
+											<div class="part2-box-date">"2022-11-15~"<br>2022-12-25</div>
+											<div class="part2-box-category">장소</div>
+											<div class="part2-category-info">교실</div>
+										</div>
+										<div  class="part2-slide-box">
+
+											<div class="part2-box-header">강원</div>
+											<div class="part2-box-title">2022년 장애인 디딤돌 경제교육_ 원주 양업토마스장애인 종합복지관</div>
+											<div class="part2-box-date">"2022-03-03~"<br>2022-11-30</div>
+											<div class="part2-box-category">장소</div>
+											<div class="part2-category-info">양업토마스장애인종합복지관</div>
+											
+											
+										</div>
+										<div  class="part2-slide-box">
+											<div class="part2-box-header">전남</div>
+											<div class="part2-box-title">찾아가는 초&#183;중&#183;고 경제교실</div>
+											<div class="part2-box-date">"2022-11-16~"<br>2022-12-16</div>
+											<div class="part2-box-category">장소</div>
+											<div class="part2-category-info">나주 영산포여자중</div>
+										</div>
+										<div  class="part2-slide-box">
+											<div class="part2-box-header">전남</div>
+											<div class="part2-box-title">찾아가는 초&#183;중&#183;고 경제교실</div>
+											<div class="part2-box-date">"2022-11-16~"<br>2022-12-16</div>
+											<div class="part2-box-category">장소</div>
+											<div class="part2-category-info">나주 영산포여자중</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main_cont4">
+					<div class="container">
+						<h3 class="part3-title">
+							경제배움e<span>소식</span>
+						</h3>
+						<div class="part3-box">
+							<div class="part3-box-left">
+								<div class="notice-tit">
+									<h4>공지사항</h4>
+								</div>
+								<div class="notice-cont">
+									<ul class="notice-cont-list">
+										<li class="first">
+											<div class="notice-calender">
+												<div class="calender-day">14</div>
+												<div class="calender-monthly">2022-10</div>
+											</div>
+											<div class="notice-news">
+												<div class="notice-news-tit">
+													<a href="#" title="2022년 9월 퀴즈이벤트 정답 및 당첨자 발표">2022년 9월 퀴즈이벤트 정답 및 당첨자 발표</a>
+												</div>
+												<div class="notice-news-cont">
+													<span>
+													전*은(8541)신*훈(4014)신*호(2097)강*구(5463)
+													이*영(8528)조*화(5287)정*형(1180)장*범(5383)
+													이*석(7935)안*희(1852)강*수(9085)류*란(8999)
+													김*형(6292)최*미(1505)이*은(0380)장*아(4877)</span>
+												</div>
+											</div>
+										</li>
+										<li><a href="#">
+											<div class="notice-cont-list-ct">'2022 대한민국 경제교육대상' 공모안내</div>
+											<div class="notice-cont-list-date">2022-09-22</div>
+										</a></li>
+										<li><a href="#">
+											<div class="notice-cont-list-ct">2022년 8월 베스트 콘텐츠 이벤트 당첨자 발표</div>
+											<div class="notice-cont-list-date">2022-08-17</div>
+										</a></li>
+										<li><a href="#">
+											<div class="notice-cont-list-ct"> 2022년 7월 퀴즈이벤트 정답 및 당첨자 발표</div> 
+											<div class="notice-cont-list-date">2022-08-10</div>
+										</a></li>
+									</ul>
+								</div>
+								<div class="notice-more">
+									<a href="#"><img src="./img/notice_add_.gif" alt="공지사항 버튼"></a>
+								</div>
+							</div>
+							<div class="part3-box-right">
+								<div class="part3-right-top">
+									<h4 class="part3-right-top-title">알림판</h4>
+									<div class="part3-slide-btn">
+										<div class="part3-slide-count">
+											<span class="part3-slide-count1 partCount">1</span>
+												/ 
+											<span class="part3-slide-count2">3</span>
+										</div>
+										<div class="part3-slide-operation">
+											<div class="part3-slide-prev">
+												<a href="javascript:"><img src="./img/main_part03_prev.gif" alt="이전버튼"></a>				
+											</div>
+											<div class="part3-slide-on">
+												<a href="javascript:"><img src="./img/main_part03_on.gif" alt="정지버튼"></a>
+											</div>
+											<div class="part3-slide-next">
+												<a href="javascript:" class="part3-slide-btn-next"><img src="./img/main_part03_next1.gif" alt="다음버튼"></a>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+								<div class="part3-slide">
+									<ul>
+										<li><a href="#"><img src="./img/part3_img_slide_1.png" alt="퀴즈이벤트"></a></li>
+										<li><a href="#"><img src="./img/part3_img_slide_2.jpg" alt="경제교육 체험"></a></li>
+										<li><a href="#"><img src="./img/banner45555.png" alt="은퇴준비하기"></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="main_cont5">
+					<div class="container">
+						<div class="ads">
+							<div class="ads-title">2022년부터 달라지는 정책을 한눈에 확인해 볼 수 있습니다</div>
+							<ul class="ads-btnbox">
+								<li><a href="#" title="분야별 정책">분야별 정책</a></li>
+								<li><a href="#" title="부처별 정책">부처별 정책</a></li>
+								<li><a href="#" title="시기별 정책">시기별 정책</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="main_cont6">
+					<div class="container">
+						<div class="main-friends">
+							<div class="main-friends-left">
+								<h3 class="friends-title">배너모음</h3>
+								<div class="friends-btn">
+									<a href="javascript:" class="friends-btn-prev"><img src="./img/friends_bt_left.gif" alt=""></a>
+									<a href="javascript:" class="friends-btn-on"><img src="./img/friends_bt_on.gif" alt=""></a>
+									<a href="javascript:" class="friends-btn-next"><img src="./img/friends_bt_right.gif" alt=""></a>
+								</div>
+							</div>
+							<div class="main-friends-right">
+								<ul class="main-friends-slide cf">
+									<li><a href="#"><img src="./img/20170908153723309.gif" alt="한국소비자원"></a></li>
+									<li><a href="#"><img src="./img/20170908153756115.gif" alt="EBS"></a></li>
+									<li><a href="#"><img src="./img/20170908153821335.gif" alt="아름다운 은행"></a></li>
+									<li><a href="#"><img src="./img/20170908153845002.gif" alt="여신금융협회"></a></li>
+									<li><a href="#"><img src="./img/20170908153859643.gif" alt="생명보험교육문화센터"></a></li>
+									<li><a href="#"><img src="./img/20170908153912260.gif" alt="무역아카데미"></a></li>
+									<li><a href="#"><img src="./img/20170908153926325.gif" alt="매경TEST"></a></li>
+									<li><a href="#"><img src="./img/20170908153950875.gif" alt="씽크머니"></a></li>
+									<li><a href="#"><img src="./img/20170908154004026.gif" alt="파인"></a></li>
+									<li><a href="#"><img src="./img/20170908154034229.gif" alt="어린이 경제교실"></a></li>
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				<div class="map">
+					<div class="container">
+						<div id="map"></div>
+						<div id="roadview" style="width:100%;height:300px"></div> <!-- 로드뷰를 표시할 div 입니다 -->
+					</div>
+				</div>
+			</main>
+			<footer id="footer">
+				<div class="container cf">
+					<div class="footer-box">
+						<h2 class="flogo">
+							<img src="./img/footer-logo.png" alt="기획재정부">
+						</h2>
+						<div class="footer-right">
+							<ul>
+								<li><a href="#" title="웹접근성 정책">웹접근성 정책</a></li>
+								<li><a href="#" title="개인정보처리방침">개인정보처리방침</a></li>
+								<li><a href="#" title="이메일주소무단수집">이메일주소무단수집 거부</a></li>
+								<li><a href="#" title="RSS이용안내">RSS이용안내</a></li>
+								<li><a href="#" title="경제교육강사 교육 프로그램">경제교육강사 교육 프로그램</a></li>
+							</ul>
+							<p class="txt">(30109) 세종특별자치시 갈매로 477 
+								정부세종청사 기획재정부 대표전화 : 044-215-2114 FAX : 044-215-8033
+							</p>
+							<p class="txt">Copyrightⓒ Ministry of Economy and Finance. 
+								Republic of Korea. Some Rights reserved.</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+			
+		</div>
+
+	</div>
+
+	
+	
+</body>
+
+
+</html>
